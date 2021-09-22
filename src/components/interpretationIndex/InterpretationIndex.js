@@ -17,3 +17,15 @@
   //TextBoxComponent
   // Submit Finished Interpretation Button
 
+  // const InterpretationIndex = ({choice, displayType}) => {
+  const InterpretationIndex = () => {
+
+    return (
+      <div className="InterpretationIndex">
+        <p>INTERPRETATION INDEX</p>
+      </div>
+    )
+  }
+
+  export default InterpretationIndex;
+
