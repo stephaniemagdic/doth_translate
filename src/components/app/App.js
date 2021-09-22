@@ -1,6 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
+import InterpretationIndex from '../interpretationIndex/InterpretationIndex.js'
 
 function App() {
   return (
@@ -16,7 +16,8 @@ function App() {
       /> */}
       <Route
       exact path= "/category/theme/:choice"
-      render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
+      // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
+      render={() => <InterpretationIndex />}
       />
       {/* <Route
       exact path= "/category/title/:choice"
