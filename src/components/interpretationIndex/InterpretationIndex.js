@@ -21,6 +21,7 @@
 
   import React, {useEffect, useState} from 'react';
   import {fetchRandomQuote} from '../../util.js'
+  import Quote from '../quote/Quote.js'
 
   const InterpretationIndex = () => {
     const [quote, setQuote] = useState('')
@@ -47,6 +48,7 @@
       <div className="InterpretationIndex">
         <p>INTERPRETATION INDEX</p>
         <p>{quote}</p>
+        <Quote quote={quote}/>
       </div>
     )
   }
