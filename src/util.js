@@ -2,6 +2,10 @@ export const fetchRandomQuote = () => {
   return fetch('https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/single').then((res) => res.ok ? res.json() : console.log("something went wrong")).catch(err => err)
 }
 
+export const fetchDefinition = (word) => {
+  return fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`).then((res) => res.ok ? res.json() : console.log("something went wrong, res:", res)).catch(err => err)
+}
+
 // export const fetchQuoteByTitle = () => {
 
 // }
