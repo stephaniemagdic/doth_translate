@@ -18,11 +18,35 @@
   // Submit Finished Interpretation Button
 
   // const InterpretationIndex = ({choice, displayType}) => {
+
+  import React, {useEffect, useState} from 'react';
+  import {fetchRandomQuote} from '../../util.js'
+
   const InterpretationIndex = () => {
+    const [quote, setQuote] = useState('')
+    const [error, setError] = useState(null)
+
+    const fetchSingleQuote = async () => {
+      console.log("I am in fetchSingleQuote!")
+      try {
+        const data = await fetchRandomQuote()
+        console.log('data---->', data)
+        setQuote(data.quote.quote)
+      } catch (err) {
+        setError(err)
+        console.log(err)
+      }
+    }
+  
+    // currently on page load a random quote is generated.
+    useEffect(() => {
+      fetchSingleQuote()
+    }, ([]))
 
     return (
       <div className="InterpretationIndex">
         <p>INTERPRETATION INDEX</p>
+        <p>{quote}</p>
       </div>
     )
   }
