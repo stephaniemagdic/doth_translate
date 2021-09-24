@@ -25,10 +25,13 @@
   import './InterpretationIndex.css'
   import {Link} from 'react-router-dom';
 
+  //if in edit mode .. will display interpretation index editMode.
   const InterpretationIndex = ({addInterpretation, addToFavorites}) => {
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
     const [currentInterpretation, setCurrentInterpretation] = useState('')
+    const [isDisabled, setIsDisabled] = useState(true)
+
 
     const fetchSingleQuote = async () => {
       console.log("I am in fetchSingleQuote!")
@@ -46,6 +49,13 @@
     useEffect(() => {
       fetchSingleQuote()
     }, ([]))
+
+    const handleChange = (event) => {
+      setCurrentInterpretation(event.target.value)
+      if (event.target.value) {
+        setIsDisabled(false)
+      }
+    }
 
     return (
       <div className="InterpretationIndex">
@@ -66,15 +76,15 @@
           </Link>
         </nav>
         <p>INTERPRETATION INDEX</p>
-        <p>{quote}</p>
-        <Quote quote={quote} addToFavorites={addToFavorites}/>
+        <p>TEST -- {quote}</p>
+        <Quote quote={quote} addToFavorites={addToFavorites} />
         <input
           type='text'
           placeholder='Type your interpretation here'
-          onChange={(event) => setCurrentInterpretation(event.target.value)}
+          onChange={(event) => handleChange(event)}
         />
         <button onClick={() => addInterpretation(currentInterpretation)}
-        className="submit-btn">Submit Intepretation</button>
+        className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
       </div>
     )
   }
@@ -82,3 +92,4 @@
   export default InterpretationIndex;
 
 //TO do: dont save interpretations that are empty.
+    //disable button if empty.
