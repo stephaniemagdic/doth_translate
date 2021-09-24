@@ -18,8 +18,11 @@ export const fetchAllTitles = () => {
   return fetch('https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/play-titles').then((res) => res.ok ? res.json() : console.log("something went wrong")).catch(err => err)
 }
 
-//url list
-// all titles: 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/play-titles'
+export const fetchAllThemes = () => {
+  return fetch('https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/themes').then((res) => res.ok ? res.json() : console.log("something went wrong")).catch(err => err)
+}
+
+
 // get a single random quote by title: 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/by-play/henry-v'
 
 
