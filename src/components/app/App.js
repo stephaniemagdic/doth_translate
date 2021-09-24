@@ -17,7 +17,19 @@ function App() {
   const addToFavorites = (newFavorite) => {
     // TO DO: only add unique values to favorites.
     setFavorites([...favorites, newFavorite])
+    const storageFavorites = JSON.stringify([...favorites, newFavorite])
+    localStorage.setItem('favorites', storageFavorites)
   }
+
+  //get local storage items on render.
+  useEffect(
+    () => {
+      if(localStorage.favorites) {
+        const retrievedItems = JSON.parse(localStorage.getItem('favorites'))
+        setFavorites(retrievedItems)
+      }
+    }, [])
+
 
 
 
