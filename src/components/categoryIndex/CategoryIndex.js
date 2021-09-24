@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import {fetchAllTitles, fetchAllThemes} from '../../util.js'
+import CardsContainer from '../cardsContainer/CardsContainer';
 
 export const CategoryIndex = ({category}) => {
   console.log("match-->", category.match.params.type)
@@ -11,6 +12,7 @@ export const CategoryIndex = ({category}) => {
       const data = await fetchAllTitles()
       setAllTitles(data.quote)
       console.log("data in fetchAllTitles", data)
+      
     } catch (err) {
       console.log(err)
       // setError(err)
@@ -28,6 +30,7 @@ export const CategoryIndex = ({category}) => {
     }
   }
 
+
   //Next Step.. pass data to CardsContainer...
 
   useEffect(() => {
@@ -42,7 +45,10 @@ export const CategoryIndex = ({category}) => {
   }, [])
 
   return (
-    <p>test</p>
+    <>
+    {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
+    {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }
+    </>
   )
 }
 
