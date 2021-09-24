@@ -70,6 +70,7 @@
         <Quote quote={quote} addToFavorites={addToFavorites}/>
         <input
           type='text'
+          placeholder='Type your interpration here'
           onChange={(event) => setCurrentInterpretation(event.target.value)}
         />
         <button onClick={(event) => addInterpretation(currentInterpretation)}>Submit Intepretation</button>

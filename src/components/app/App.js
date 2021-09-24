@@ -12,12 +12,30 @@ function App() {
 
   const addInterpretation = (newInterpretation) => {
     setUserSavedInterpretations([...userSavedInterpretations, newInterpretation])
+    const storageInterpretations = JSON.stringify([...userSavedInterpretations, newInterpretation])
+    localStorage.setItem('interpretations', storageInterpretations)
   }
 
   const addToFavorites = (newFavorite) => {
     // TO DO: only add unique values to favorites.
     setFavorites([...favorites, newFavorite])
+    const storageFavorites = JSON.stringify([...favorites, newFavorite])
+    localStorage.setItem('favorites', storageFavorites)
   }
+
+  //get local storage items on render.
+  useEffect(
+    () => {
+      if(localStorage.favorites) {
+        const retrievedFavorites = JSON.parse(localStorage.getItem('favorites'))
+        setFavorites(retrievedFavorites)
+      }
+      if(localStorage.interpretations) {
+        const retrievedIterpretations = JSON.parse(localStorage.getItem('interpretations'))
+        setUserSavedInterpretations(retrievedIterpretations)
+      }
+    }, [])
+
 
 
 
