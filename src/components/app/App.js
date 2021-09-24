@@ -1,6 +1,7 @@
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import InterpretationIndex from '../interpretationIndex/InterpretationIndex.js';
+import IntepretationsSubmisssionsIndex from '../intepretationSubmissionsIndex/IntepretationSubmissionsIndex';
 import { useState } from 'react';
 
 
@@ -38,12 +39,12 @@ function App() {
       {/* <Route
       exact path= "/category/title/:choice"
       render={(match) =><InterpretationIndex choice={match.params.choice} displayType="theme" isEditing={false}/>}
-      />
+      /> */}
       <Route
       exact path= "/my-interpretations"
-      render={(match) =><IntepretationsSubmisssionsIndex/>}
+      render={(match) =><IntepretationsSubmisssionsIndex favorites={favorites} userSavedInterpretations={userSavedInterpretations}/>}
       />
-      <Route
+      {/* <Route
       exact path= "edit/:id"
       render={(match) =><InterpretationIndex isEditing={true}/>}
       /> */}
