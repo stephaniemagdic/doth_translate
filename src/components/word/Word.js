@@ -25,7 +25,6 @@ const Word = ({word}) => {
     if (word.length >= 5 ) {
     getDefinition();
     }
-    
   }, [])
 
 
@@ -35,7 +34,7 @@ const Word = ({word}) => {
     <div className="Word">
       {word.length >= 5 && definition && (
          <>
-         <a data-tip data-for={word} > {word}: {definition}</a>
+         <a data-tip data-for={word} > {word}</a>
         <ReactTooltip id={word} >
           <span >{definition}</span>
         </ReactTooltip>
