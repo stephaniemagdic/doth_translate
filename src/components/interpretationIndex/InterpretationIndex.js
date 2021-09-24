@@ -22,10 +22,12 @@
   import React, {useEffect, useState} from 'react';
   import {fetchRandomQuote} from '../../util.js'
   import Quote from '../quote/Quote.js'
+  import './InterpretationIndex.css'
 
-  const InterpretationIndex = () => {
+  const InterpretationIndex = ({addInterpretation}) => {
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
+    const [currentInterpretation, setCurrentInterpretation] = useState('')
 
     const fetchSingleQuote = async () => {
       console.log("I am in fetchSingleQuote!")
@@ -49,6 +51,11 @@
         <p>INTERPRETATION INDEX</p>
         <p>{quote}</p>
         <Quote quote={quote}/>
+        <input
+          type='text'
+          onChange={(event) => setCurrentInterpretation(event.target.value)}
+        />
+        <button onClick={(event) => addInterpretation(currentInterpretation)}>Submit Intepretation</button>
       </div>
     )
   }
