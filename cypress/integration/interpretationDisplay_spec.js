@@ -6,6 +6,13 @@ describe('Interpretation Display User Flows', () => {
     cy.contains('But lest myself be guilty to self wrong, i\'ll stop mine ears against the mermaid\'s song')
   });
 
+  it('A user should be taken to a my interpretations page when clicking on my intepretations button', () => {
+    cy.visit('http://localhost:3002/category/theme/love')
+    cy.get('.my-interpretations-btn').click()
+    cy.url().should('include', 'my-interpretations')
+  });
+
+
   it('A user should see a quote randomly quote by chosen title on page load', () => {
     cy.fetchQuoteByTitle()
     cy.visit('http://localhost:3002/category/title/othello')
