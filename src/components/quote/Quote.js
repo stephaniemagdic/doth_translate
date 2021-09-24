@@ -1,6 +1,6 @@
 import Word from '../word/Word.js';
 
-const Quote = ({quote}) => {
+const Quote = ({quote, addToFavorites}) => {
   const words = quote.split(" ").map(word => <Word word={word}/> )
   console.log(words)
 
@@ -9,8 +9,11 @@ const Quote = ({quote}) => {
 
   return (
     <div className="Quote">
-      {quote}
+     
+      <div className="words-container">
       {words}
+      </div>
+      <button onClick={() => addToFavorites(quote)}>Favorite</button>
     </div>
   )
 }
