@@ -7,11 +7,14 @@ const Card = ({cardData, type}) => {
     componentToRender = (
       <div className="favorites">
         {cardData}
+      <button>REMOVE FROM FAVORITES</button>
       </div>
+      
     )
   } else if (type === 'submissions') {
     componentToRender = ( <div className="submissions">
       {cardData}
+    <button>EDIT</button>
     </div>)
   }
 
