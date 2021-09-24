@@ -39,6 +39,11 @@ Cypress.Commands.add('addInterpretation', () => {
   cy.get('.submit-btn').click()
 })
 
+Cypress.Commands.add('addFavorite', () => {
+  cy.fetchRandomQuote()
+  cy.visit('http://localhost:3002/category/theme/love')
+  cy.get('.favorite-btn').click()
+})
 
-// cy.get('favorite-btn').click()
+
 
