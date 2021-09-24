@@ -12,6 +12,8 @@ function App() {
 
   const addInterpretation = (newInterpretation) => {
     setUserSavedInterpretations([...userSavedInterpretations, newInterpretation])
+    const storageInterpretations = JSON.stringify([...userSavedInterpretations, newInterpretation])
+    localStorage.setItem('interpretations', storageInterpretations)
   }
 
   const addToFavorites = (newFavorite) => {
@@ -25,8 +27,12 @@ function App() {
   useEffect(
     () => {
       if(localStorage.favorites) {
-        const retrievedItems = JSON.parse(localStorage.getItem('favorites'))
-        setFavorites(retrievedItems)
+        const retrievedFavorites = JSON.parse(localStorage.getItem('favorites'))
+        setFavorites(retrievedFavorites)
+      }
+      if(localStorage.interpretations) {
+        const retrievedIterpretations = JSON.parse(localStorage.getItem('interpretations'))
+        setUserSavedInterpretations(retrievedIterpretations)
       }
     }, [])
 
