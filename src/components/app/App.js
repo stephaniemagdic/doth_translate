@@ -31,8 +31,8 @@ function App() {
         setFavorites(retrievedFavorites)
       }
       if(localStorage.interpretations) {
-        const retrievedIterpretations = JSON.parse(localStorage.getItem('interpretations'))
-        setUserSavedInterpretations(retrievedIterpretations)
+        const retrievedInterpretations = JSON.parse(localStorage.getItem('interpretations'))
+        setUserSavedInterpretations(retrievedInterpretations)
       }
     }, [])
 
