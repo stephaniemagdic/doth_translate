@@ -1,0 +1,15 @@
+a {
+  /* //TO DO: margin is still a bit larger than other words have */
+  margin: 0px;
+  padding: 0px;
+}
+
+.Word {
+  margin: 2px;
+  display: inline;
+}
+
+.defined {
+  text-decoration: underline;
+}
+
