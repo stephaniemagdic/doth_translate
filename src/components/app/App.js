@@ -64,6 +64,12 @@ function App() {
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
       render={() => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites}/>}
       />
+      <Route
+      exact path= "/category/title/:choice"
+      // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
+      render={() => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites}/>}
+      />
+
       {/* <Route
       exact path= "/category/title/:choice"
       render={(match) =><InterpretationIndex choice={match.params.choice} displayType="theme" isEditing={false}/>}
