@@ -60,7 +60,7 @@
             CHOOSE A NEW TOPIC
           </button>
           <Link to='/my-interpretations' >
-          <button>
+          <button className='my-interpretations-btn'>
             GO TO MY INTERPRETATIONS
           </button>
           </Link>
@@ -70,10 +70,11 @@
         <Quote quote={quote} addToFavorites={addToFavorites}/>
         <input
           type='text'
-          placeholder='Type your interpration here'
+          placeholder='Type your interpretation here'
           onChange={(event) => setCurrentInterpretation(event.target.value)}
         />
-        <button onClick={(event) => addInterpretation(currentInterpretation)}>Submit Intepretation</button>
+        <button onClick={() => addInterpretation(currentInterpretation)}
+        className="submit-btn">Submit Intepretation</button>
       </div>
     )
   }

@@ -13,7 +13,7 @@ const Quote = ({quote, addToFavorites}) => {
       <div className="words-container">
       {words}
       </div>
-      <button onClick={() => addToFavorites(quote)}>Favorite</button>
+      <button onClick={() => addToFavorites(quote)} className="favorite-btn">Favorite</button>
     </div>
   )
 }

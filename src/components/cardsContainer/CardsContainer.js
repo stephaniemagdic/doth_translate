@@ -5,9 +5,16 @@ const CardsContainer = ({cards, type}) => {
     const cardComponents = cards.map(card => <Card cardData={card} type={type}/>)
 
     return (
-      <div>
-         {cardComponents}
-      </div>
+      <>
+      { type === "submissions" && (<div className="interpretations">
+      {cardComponents}
+   </div>)}
+      
+   { type === "favorites" && (<div className="favorites">
+      {cardComponents}
+   </div>)}
+      
+      </>
      
     )
 
