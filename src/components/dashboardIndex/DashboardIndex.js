@@ -9,10 +9,10 @@ const DashboardIndex = () => {
     <div className="DashboardIndex">
       <h1>Welcome Lambkin!</h1>
       <h2>Choose a Quote Category</h2>
-      <Link to=''>
+      <Link to='/category/theme'>
       <button className="theme-btn">THEME</button>
       </Link>
-      <Link to=''>
+      <Link to='/category/title'>
       <button className="title-btn">Title</button>
       </Link>
       
