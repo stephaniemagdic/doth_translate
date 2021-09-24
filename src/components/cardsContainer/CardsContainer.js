@@ -1,8 +1,31 @@
 import Card from '../card/Card';
+import {Link} from 'react-router-dom';
 
 const CardsContainer = ({cards, type}) => {
+   let cardComponents;
 
-    const cardComponents = cards.map(card => <Card cardData={card} type={type}/>)
+   if(type === "theme-options" ) {
+     
+   cardComponents = cards.map(card =>
+
+       <Link to={`/category/theme/${card}`}>
+      <Card cardData={card} type={type}/>
+      </Link>
+      )
+   } else if (type === "title-options") {
+
+
+       cardComponents = cards.map(card =>
+
+       <Link to={`/category/title/${card}`}>
+      <Card cardData={card} type={type}/>
+      </Link>
+      )
+   } else if (type === "submissions" || type === "favorites") {
+       cardComponents = cards.map(card => <Card cardData={card} type={type}/>)
+   }
+
+   
 
     return (
       <>
