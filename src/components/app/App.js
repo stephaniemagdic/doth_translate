@@ -4,6 +4,7 @@ import InterpretationIndex from '../interpretationIndex/InterpretationIndex.js';
 import IntepretationsSubmisssionsIndex from '../intepretationSubmissionsIndex/IntepretationSubmissionsIndex';
 import { useState, useEffect } from 'react';
 import DashboardIndex from '../dashboardIndex/DashboardIndex'
+import CategoryIndex from '../categoryIndex/CategoryIndex'
 
 
 function App() {
@@ -54,10 +55,10 @@ function App() {
         exact path = "/"
         render={(match) => <DashboardIndex />}
       />
-{/*       <Route
+      <Route
       exact path= "/category/:type"
-      render={(match) => <CategoryIndex category={match.params.type}/>}
-      /> */}
+      render={(match) => <CategoryIndex category={match}/>}
+      />
       <Route
       exact path= "/category/theme/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
