@@ -24,7 +24,7 @@
   import Quote from '../quote/Quote.js'
   import './InterpretationIndex.css'
 
-  const InterpretationIndex = ({addInterpretation}) => {
+  const InterpretationIndex = ({addInterpretation, addToFavorites}) => {
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
     const [currentInterpretation, setCurrentInterpretation] = useState('')
@@ -48,9 +48,23 @@
 
     return (
       <div className="InterpretationIndex">
+        <nav>
+          <button>
+            GET A NEW QUOTE
+          </button>
+          <button>
+            CHOOSE A NEW CATEGORY
+          </button>
+          <button>
+            CHOOSE A NEW TOPIC
+          </button>
+          <buttton>
+            GO TO MY INTERPRETATIONS
+          </buttton>
+        </nav>
         <p>INTERPRETATION INDEX</p>
         <p>{quote}</p>
-        <Quote quote={quote}/>
+        <Quote quote={quote} addToFavorites={addToFavorites}/>
         <input
           type='text'
           onChange={(event) => setCurrentInterpretation(event.target.value)}
@@ -62,3 +76,4 @@
 
   export default InterpretationIndex;
 
+//TO do: dont save interpretations that are empty.
