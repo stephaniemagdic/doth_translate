@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import InterpretationIndex from '../interpretationIndex/InterpretationIndex.js';
 import IntepretationsSubmisssionsIndex from '../intepretationSubmissionsIndex/IntepretationSubmissionsIndex';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
     // TO DO: only add unique values to favorites.
     setFavorites([...favorites, newFavorite])
   }
+
 
 
   return (
