@@ -14,6 +14,9 @@ export const fetchDefinition = (word) => {
 
 // }
 
+export const fetchAllTitles = () => {
+  return fetch('https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/play-titles').then((res) => res.ok ? res.json() : console.log("something went wrong")).catch(err => err)
+}
 
 //url list
 // all titles: 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/play-titles'
