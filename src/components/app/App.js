@@ -49,14 +49,14 @@ function App() {
   return (
     <div className="App">
       <Switch>
-{/*       <Route
+      <Route
         exact path = "/"
         render={(match) => <DashboardIndex />}
       />
       <Route
       exact path= "/category/:type"
       render={(match) => <CategoryIndex category={match.params.type}/>}
-      /> */}
+      />
       <Route
       exact path= "/category/theme/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
