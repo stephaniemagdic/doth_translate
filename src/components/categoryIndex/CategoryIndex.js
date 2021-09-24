@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import {fetchAllTitles} from '../../util.js'
+import {fetchAllTitles, fetchAllThemes} from '../../util.js'
 
 export const CategoryIndex = ({category}) => {
   console.log("match-->", category.match.params.type)
