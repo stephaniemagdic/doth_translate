@@ -1,7 +1,25 @@
-const Card = ({card}) => {
-  console.log(card)
+const Card = ({cardData, type}) => {
+  console.log(cardData, type)
+
+  let componentToRender;
+
+  if (type === 'favorites') {
+    componentToRender = (
+      <div className="favorites">
+        {cardData}
+      </div>
+    )
+  } else if (type === 'submissions') {
+    componentToRender = ( <div className="submissions">
+      {cardData}
+    </div>)
+  }
+
   return (
-    <p>CARD</p>
+    <div>
+      {componentToRender}
+    </div>
+   
   )
 }
 
