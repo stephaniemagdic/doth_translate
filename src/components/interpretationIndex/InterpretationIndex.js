@@ -23,6 +23,7 @@
   import {fetchRandomQuote} from '../../util.js'
   import Quote from '../quote/Quote.js'
   import './InterpretationIndex.css'
+  import {Link} from 'react-router-dom';
 
   const InterpretationIndex = ({addInterpretation, addToFavorites}) => {
     const [quote, setQuote] = useState('')
@@ -58,9 +59,11 @@
           <button>
             CHOOSE A NEW TOPIC
           </button>
-          <buttton>
+          <Link to='/my-interpretations' >
+          <button>
             GO TO MY INTERPRETATIONS
-          </buttton>
+          </button>
+          </Link>
         </nav>
         <p>INTERPRETATION INDEX</p>
         <p>{quote}</p>
