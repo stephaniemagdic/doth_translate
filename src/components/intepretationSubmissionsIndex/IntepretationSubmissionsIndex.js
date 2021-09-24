@@ -4,8 +4,8 @@ const InterpretationSubmissionIndex = ({favorites, userSavedInterpretations}) =>
   return (
     <div className="InterpretationSubmissionIndex">
       <p>Interpretation Submissions</p>
-      <CardsContainer cards={favorites}/>
-      <CardsContainer cards={userSavedInterpretations}/>
+      <CardsContainer cards={favorites} type='favorites'/>
+      <CardsContainer cards={userSavedInterpretations} type='submissions'/>
     </div>
     
   )
