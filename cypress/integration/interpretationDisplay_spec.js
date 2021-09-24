@@ -12,6 +12,12 @@ describe('Interpretation Display User Flows', () => {
     cy.url().should('include', 'my-interpretations')
   });
 
+  it('A user should be able to type in the interpretation input field and see their text displayed on the page', () => {
+    cy.visit('http://localhost:3002/category/theme/love')
+    cy.get('input').type('HERE IS MY INTERPRETATION')
+    cy.should('have.value', 'HERE IS MY INTERPRETATION')
+  });
+
 
   it('A user should see a quote randomly quote by chosen title on page load', () => {
     cy.fetchQuoteByTitle()
