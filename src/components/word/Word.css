@@ -5,4 +5,10 @@ a {
 
 .Word {
   padding: 20px;
+  display: inline;
 }
+
+.defined {
+  text-decoration: solid-underline;
+}
+
