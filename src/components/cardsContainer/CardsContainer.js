@@ -13,6 +13,15 @@ const CardsContainer = ({cards, type}) => {
    { type === "favorites" && (<div className="favorites">
       {cardComponents}
    </div>)}
+
+   { type === "title-options" && (<div className="titles">
+      {cardComponents}
+   </div>)}
+
+   { type === "theme-options" && (<div className="themes">
+      {cardComponents}
+   </div>)}
+
       
       </>
      
