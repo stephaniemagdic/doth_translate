@@ -11,6 +11,10 @@ function App() {
   //Right now we will have our saved interpretations held in app so it can be passed to our my-interpretationIndex
 
   const addInterpretation = (newInterpretation) => {
+    //if empty string or undefined.
+    if (newInterpretation) {
+      return
+    }
     setUserSavedInterpretations([...userSavedInterpretations, newInterpretation])
     const storageInterpretations = JSON.stringify([...userSavedInterpretations, newInterpretation])
     localStorage.setItem('interpretations', storageInterpretations)
@@ -18,6 +22,9 @@ function App() {
 
   const addToFavorites = (newFavorite) => {
     // TO DO: only add unique values to favorites.
+    if(favorites.includes(newFavorite)) {
+      return
+    }
     setFavorites([...favorites, newFavorite])
     const storageFavorites = JSON.stringify([...favorites, newFavorite])
     localStorage.setItem('favorites', storageFavorites)
