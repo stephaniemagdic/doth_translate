@@ -5,6 +5,7 @@ import './Word.css'
 
 const Word = ({word}) => {
   const [definition, setDefinition] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   //this will be used for styling purposes.
   const [hasDefinition, setHasDefinition] = useState(false)
@@ -16,24 +17,27 @@ const Word = ({word}) => {
       console.log("here--------->",data[0].meta['app-shortdef'].def[0])
       setDefinition(data[0].meta['app-shortdef'].def[0])
       setHasDefinition(true)
+      setIsLoading(false)
 
     } catch (err) {
       // setError(err)
       console.log(err)
+      setIsLoading(false)
     }
   }
 
   useEffect(() => {  
     if (word.length >= 5 ) {
     getDefinition();
+    } else {
+      setIsLoading(false)
     }
   }, [])
 
 
-   
-
   return (
     <div className="Word">
+      {isLoading && <p>Fetching your quote's context clues!</p>}
       {word.length >= 5 && definition && (
          <>
          <a data-tip data-for={word}> <span className="defined">{word}</span></a>
