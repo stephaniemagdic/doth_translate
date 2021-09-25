@@ -1,34 +1,49 @@
-// TO DO: this component will be rendered by pulling the value of the choice key from the match param **
-// it will then take that value and do a conditionally pull for one of two fetches based on another property: displayType={"theme"} or displayType={"title"}
-
-// Setup: Take that value and do a fetch depending on the type
-
-  // const InterpretationIndex = ({choice, displayType}) => {
-
   import React, {useEffect, useState} from 'react';
-  import {fetchRandomQuote} from '../../util.js'
+  import {fetchQuoteByTheme, fetchQuoteByTitle} from '../../util.js'
   import Quote from '../quote/Quote.js'
   import './InterpretationIndex.css'
   import {Link} from 'react-router-dom';
 
-  const InterpretationIndex = ({addInterpretation, addToFavorites}) => {
+  const InterpretationIndex = ({addInterpretation, addToFavorites, match}) => {
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
     const [currentInterpretation, setCurrentInterpretation] = useState('')
     const [isDisabled, setIsDisabled] = useState(true)
 
-    const fetchSingleQuote = async () => {
+    const fetchThemeQuote = async (theme) => {
       try {
-        const data = await fetchRandomQuote()
+        const data = await fetchQuoteByTheme(theme)
+        setQuote(data.quote.quote)
+        console.log("data for theme quote-->", data)
+      } catch (err) {
+        setError(err)
+      }
+    }
+
+    const fetchTitleQuote = async (title) => {
+      try {
+        const data = await fetchQuoteByTitle(title)
         setQuote(data.quote.quote)
       } catch (err) {
         setError(err)
       }
     }
-  
-    // currently on page load a random quote is generated.
+
+
     useEffect(() => {
-      fetchSingleQuote()
+      if ( window.location.href.includes('/category/title/')) {
+        // fetchTitleQuote(match.match.params.choice)
+        const urlParams = window.location.href.split("/")
+        const index = (window.location.href.split("/").indexOf('title')) + 1
+        const param = urlParams[index]
+        fetchTitleQuote(param)     
+      } else if ( window.location.href.includes('/category/theme/') ) {
+        // fetchThemeQuote(match.match.params.choice)
+       const urlParams = window.location.href.split("/")
+       const index = (window.location.href.split("/").indexOf('theme')) + 1
+       const param = urlParams[index]
+       fetchThemeQuote(param)
+      }    
     }, ([]))
 
     const handleChange = (event) => {
@@ -56,8 +71,8 @@
           </button>
           </Link>
         </nav>
-        <p>TEST -- INTERPRETATION INDEX</p>
-        <p>TEST -- {quote}</p>
+        {/* <p>TEST -- INTERPRETATION INDEX</p>
+        <p>TEST -- {quote}</p> */}
         <Quote quote={quote} addToFavorites={addToFavorites} />
         <input
           type='text'
@@ -71,6 +86,3 @@
   }
 
   export default InterpretationIndex;
-
-//TO do: dont save interpretations that are empty.
-    //disable button if empty.
