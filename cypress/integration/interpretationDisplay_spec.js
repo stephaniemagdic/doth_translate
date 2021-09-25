@@ -34,7 +34,20 @@ describe('Interpretation Display User Flows', () => {
     //  expect(Cypress.$('.datatable > tr')).to.have.lengthOf(4)
   });
 
-;
+  it('A user should see a definitions for words over 5 letters in length', () => {
+    cy.getDefinition()
+    cy.fetchQuoteByTitle()
+    cy.visit('http://localhost:3000/category/title/othello')
+    cy.get('.Quote')
+    cy.contains( 'Which')
+    cy.contains('thing')
+    cy.contains('TEST DEFINITION HERE')
+    cy.get('.defined').should('have.length', 18)
+    // cy.get('.defined > :nth-child(14) ').contains('very bad and easily noticed')
+    //  expect(Cypress.$('.datatable > tr')).to.have.lengthOf(4)
+
+    //
+  });
   
 
   it('A user should see a quote randomly quote by chosen theme on page load', () => {
