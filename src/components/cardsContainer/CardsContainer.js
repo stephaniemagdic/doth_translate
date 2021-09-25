@@ -1,6 +1,6 @@
 import Card from '../card/Card';
 import {Link} from 'react-router-dom';
-import './CardContainer.css';
+import './CardsContainer.css';
 
 const CardsContainer = ({cards, type}) => {
    let cardComponents;
