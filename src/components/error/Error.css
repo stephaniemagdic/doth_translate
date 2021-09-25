@@ -1,0 +1,8 @@
+.error-quote {
+  display: flex;
+  flex-direction: column
+}
+
+span {
+  display: block;
+}
