@@ -1,10 +1,11 @@
 import './App.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import InterpretationIndex from '../interpretationIndex/InterpretationIndex.js';
 import IntepretationsSubmisssionsIndex from '../intepretationSubmissionsIndex/IntepretationSubmissionsIndex';
 import { useState, useEffect } from 'react';
 import DashboardIndex from '../dashboardIndex/DashboardIndex'
 import CategoryIndex from '../categoryIndex/CategoryIndex'
+import shakespeareIcon from '../../assets/shakespeare.png';
 
 
 function App() {
@@ -84,6 +85,11 @@ function App() {
       /> */}
       <Route render={() => <p> Error! </p>} />
       </Switch>
+      <nav> 
+        <Link to="/">
+          <img src={shakespeareIcon} alt="Shakespeare icon" className="shakespeare"></img>
+        </Link>
+      </nav>
     </div>
   );
 }
