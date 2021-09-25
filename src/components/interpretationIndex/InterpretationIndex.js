@@ -60,9 +60,11 @@
             <button>
               GET A NEW QUOTE
             </button>
+            <Link to="/">
             <button>
               CHOOSE A NEW CATEGORY
             </button>
+            </Link>
             <button>
               CHOOSE A NEW TOPIC
             </button>
