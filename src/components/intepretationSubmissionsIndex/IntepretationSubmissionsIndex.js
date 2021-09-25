@@ -1,5 +1,6 @@
 import CardsContainer from '../cardsContainer/CardsContainer';
 
+
 const InterpretationSubmissionIndex = ({favorites, userSavedInterpretations}) => {
   return (
     <div className="InterpretationSubmissionIndex">

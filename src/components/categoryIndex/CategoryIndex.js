@@ -37,9 +37,7 @@ export const CategoryIndex = ({category}) => {
     const fetchType = category.match.params.type
     if(fetchType === 'theme' ) {
       fetchThemes()
-      
     } else if (fetchType === 'title') {
-      
       fetchTitles()
     }
   }, [])
