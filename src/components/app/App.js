@@ -13,23 +13,24 @@ function App() {
   const [favorites, setFavorites] = useState([])
   //Right now we will have our saved interpretations held in app so it can be passed to our my-interpretationIndex
 
-  const addInterpretation = (newInterpretation) => {
+  const addInterpretation = (quote, newInterpretation) => {
     //if empty string or undefined.
-    if (!newInterpretation) {
-      return
-    }
+    // if (!newInterpretation) {
+    //   return
+    // }
     setUserSavedInterpretations([...userSavedInterpretations, newInterpretation])
-    const storageInterpretations = JSON.stringify([...userSavedInterpretations, newInterpretation])
+    console.log("right here-->", {quote: quote.quote, interpretation: newInterpretation, id: Date.now()})
+    const storageInterpretations = JSON.stringify([...userSavedInterpretations, {quote: quote, interpretation: newInterpretation, id: Date.now()}]);
     localStorage.setItem('interpretations', storageInterpretations)
   }
 
-  const addToFavorites = (newFavorite) => {
+  const addToFavorites = (newFavorite, id) => {
     // TO DO: only add unique values to favorites.
     if(favorites.includes(newFavorite)) {
       return
     }
     setFavorites([...favorites, newFavorite])
-    const storageFavorites = JSON.stringify([...favorites, newFavorite])
+    const storageFavorites = JSON.stringify([...favorites, {quote: newFavorite, id: id}]);
     localStorage.setItem('favorites', storageFavorites)
   }
 
