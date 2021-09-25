@@ -5,7 +5,6 @@ import './InterpretationsSubmissionIndex.css'
 const InterpretationSubmissionIndex = ({favorites, userSavedInterpretations}) => {
   return (
     <div className="InterpretationSubmissionIndex">
-      <button>Take Me Back</button>
       <CardsContainer cards={favorites} type='favorites' />
       <CardsContainer cards={userSavedInterpretations} type='submissions'/>
     </div>
