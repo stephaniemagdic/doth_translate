@@ -6,11 +6,13 @@ export const CategoryIndex = ({category}) => {
   console.log("match-->", category.match.params.type)
   const [allTitles, setAllTitles] = useState([])
   const [allThemes, setAllThemes] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   const fetchTitles = async () => {
     try {
       const data = await fetchAllTitles()
       setAllTitles(data.quote)
+      setIsLoading(false)
       console.log("data in fetchAllTitles", data)
       
     } catch (err) {
@@ -23,6 +25,7 @@ export const CategoryIndex = ({category}) => {
     try {
       const data = await fetchAllThemes()
       setAllThemes(data.quote)
+      setIsLoading(false)
       console.log("data in fetchAllThemes", data)
     } catch (err) {
       console.log(err)
@@ -44,6 +47,7 @@ export const CategoryIndex = ({category}) => {
 
   return (
     <>
+    {isLoading && <p>Loading ...</p>}
     {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
     {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }
     </>

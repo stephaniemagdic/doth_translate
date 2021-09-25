@@ -3,7 +3,17 @@ export const fetchRandomQuote = () => {
 }
 
 export const fetchDefinition = (word) => {
-  return fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`).then((res) => res.ok ? res.json() : console.log("something went wrong, res:", res)).catch(err => err)
+  //https://dictionaryapi.com/api/v3/references/collegiate/json/test?key=68472c7d-1931-4202-8173-28c4329b1f20
+  //https://www.dictionaryapi.com/api/v3/references/sd3/json/dragon?key=your-api-key
+  //https://dictionaryapi.com/api/v3/references/ithesaurus/json/test?key=1eb92823-8edc-4a04-a33f-f9c69c824ab1
+  //https://dictionaryapi.com/api/v3/references/learners/json/test?key=c80e6519-7311-4235-9297-4ba6a1b27611
+  return fetch(`https://dictionaryapi.com/api/v3/references/learners/json/${word}?key=c80e6519-7311-4235-9297-4ba6a1b27611`).then(res => res.json()
+    // res.ok ? res.json() 
+    // console.log("dictionary res-->", res)
+   
+)
+//: console.log("something went wrong, res:", res)).catch(err => err)
+  // return fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`).then((res) => res.ok ? res.json() : console.log("something went wrong, res:", res)).catch(err => err)
 }
 
 export const fetchQuoteByTitle = (title) => {
