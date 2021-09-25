@@ -1,10 +1,8 @@
-/* .interpretations {
-
+.submissions, .favorites {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
 }
-
-.favorites {
-
-} */
 
 .titles, .themes {
   display: flex;
