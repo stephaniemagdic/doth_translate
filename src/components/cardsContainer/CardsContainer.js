@@ -8,19 +8,21 @@ const CardsContainer = ({cards, type}) => {
    if(type === "theme-options" ) {
      
    cardComponents = cards.map(card =>
-
+      <div key={card}>
        <Link to={`/category/theme/${card}`}>
       <Card cardData={card} type={type}/>
       </Link>
+      </div>
       )
    } else if (type === "title-options") {
 
 
        cardComponents = cards.map(card =>
-
+         <div key={card}>
        <Link to={`/category/title/${card}`}>
       <Card cardData={card} type={type}/>
       </Link>
+      </div>
       )
    } else if (type === "submissions" || type === "favorites") {
        cardComponents = cards.map(card => <Card cardData={card} type={type}/>)
