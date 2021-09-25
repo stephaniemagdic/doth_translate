@@ -7,7 +7,7 @@ const Card = ({cardData, type}) => {
     componentToRender = (
       <div className="favorites">
         {cardData}
-      <button>REMOVE FROM FAVORITES</button>
+      <button>Delete</button>
       </div>
       
     )
