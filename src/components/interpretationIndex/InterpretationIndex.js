@@ -13,8 +13,7 @@
     const fetchThemeQuote = async (theme) => {
       try {
         const data = await fetchQuoteByTheme(theme)
-        setQuote(data.quote.quote)
-        console.log("data for theme quote-->", data)
+        setQuote({quote: data.quote.quote, id: data.quote.id})    
       } catch (err) {
         setError(err)
       }
@@ -23,12 +22,11 @@
     const fetchTitleQuote = async (title) => {
       try {
         const data = await fetchQuoteByTitle(title)
-        setQuote(data.quote.quote)
+        setQuote({quote: data.quote.quote, id: data.quote.id})
       } catch (err) {
         setError(err)
       }
     }
-
 
     useEffect(() => {
       if ( window.location.href.includes('/category/title/')) {
@@ -71,14 +69,14 @@
           </nav>
           {/* <p>TEST -- INTERPRETATION INDEX</p>
           <p>TEST -- {quote}</p> */}
-          <Quote quote={quote} addToFavorites={addToFavorites} />
+          {quote && <Quote quote={quote} addToFavorites={addToFavorites}/>}
         </div>
         <input
           type='text'
           placeholder='Type your interpretation here'
           onChange={(event) => handleChange(event)}
         />
-        <button onClick={() => addInterpretation(currentInterpretation)}
+        <button onClick={() => addInterpretation(quote, currentInterpretation)}
         className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
         <Link to='/my-interpretations' >
           <button className='my-interpretations-btn'>
