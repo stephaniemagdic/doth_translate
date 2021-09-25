@@ -1,3 +1,7 @@
 .words-container {
+  margin: 0, auto;
+}
+
+.Quote {
   margin: 20px;
 }

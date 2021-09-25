@@ -1,13 +1,13 @@
-const Card = ({cardData, type}) => {
-  console.log(cardData, type)
+import './Card.css';
 
+const Card = ({cardData, type}) => {
   let componentToRender;
 
   if (type === 'favorites') {
     componentToRender = (
       <div className="favorites">
         {cardData}
-      <button>REMOVE FROM FAVORITES</button>
+      <button>Delete</button>
       </div>
       
     )
@@ -16,6 +16,14 @@ const Card = ({cardData, type}) => {
       {cardData}
     <button>EDIT</button>
     </div>)
+  } else if (type === 'theme-options') {
+    componentToRender = ( <div className="theme-options">
+      <button>{cardData}</button>
+    </div>)
+  } else if (type === 'title-options') {
+    componentToRender = ( <div className="title-options">
+    <button>{cardData}</button>
+  </div>)
   }
 
   return (

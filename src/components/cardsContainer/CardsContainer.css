@@ -1,0 +1,11 @@
+.submissions, .favorites {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.titles, .themes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
