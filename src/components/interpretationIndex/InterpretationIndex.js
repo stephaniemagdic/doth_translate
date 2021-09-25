@@ -55,25 +55,22 @@
 
     return (
       <div className="InterpretationIndex">
-        <nav>
-          <button>
-            GET A NEW QUOTE
-          </button>
-          <button>
-            CHOOSE A NEW CATEGORY
-          </button>
-          <button>
-            CHOOSE A NEW TOPIC
-          </button>
-          <Link to='/my-interpretations' >
-          <button className='my-interpretations-btn'>
-            GO TO MY INTERPRETATIONS
-          </button>
-          </Link>
-        </nav>
-        {/* <p>TEST -- INTERPRETATION INDEX</p>
-        <p>TEST -- {quote}</p> */}
-        <Quote quote={quote} addToFavorites={addToFavorites} />
+        <div className="quote-container">
+          <nav>
+            <button>
+              GET A NEW QUOTE
+            </button>
+            <button>
+              CHOOSE A NEW CATEGORY
+            </button>
+            <button>
+              CHOOSE A NEW TOPIC
+            </button>
+          </nav>
+          {/* <p>TEST -- INTERPRETATION INDEX</p>
+          <p>TEST -- {quote}</p> */}
+          <Quote quote={quote} addToFavorites={addToFavorites} />
+        </div>
         <input
           type='text'
           placeholder='Type your interpretation here'
@@ -81,6 +78,11 @@
         />
         <button onClick={() => addInterpretation(currentInterpretation)}
         className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
+        <Link to='/my-interpretations' >
+          <button className='my-interpretations-btn'>
+            GO TO MY INTERPRETATIONS
+          </button>
+        </Link>
       </div>
     )
   }
