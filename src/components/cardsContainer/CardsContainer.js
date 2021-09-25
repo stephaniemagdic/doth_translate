@@ -33,10 +33,12 @@ const CardsContainer = ({cards, type}) => {
     return (
       <>
       { type === "submissions" && (<div className="interpretations">
+      <h2>My Interpretations</h2>
       {cardComponents}
    </div>)}
       
    { type === "favorites" && (<div className="favorites">
+      <h2>Saved Quotes</h2>
       {cardComponents}
    </div>)}
 
