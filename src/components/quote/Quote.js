@@ -2,9 +2,12 @@ import Word from '../word/Word.js';
 import './Quote.css';
 
 
-const Quote = ({quote, addToFavorites}) => {
-  const words = quote.split(" ").map(word => <Word word={word}/> )
+const Quote = ({quote, addToFavorites, quoteID}) => {
+  console.log("QUOTE-->", quote)
+  const words = quote.quote.split(" ").map(word => <Word word={word}/> )
   console.log(words)
+  console.log("quote id here", quoteID)
+
 
   
 
@@ -12,11 +15,11 @@ const Quote = ({quote, addToFavorites}) => {
   // then highlighting the words that have a property of defined on them?
 
   return (
-    <div className="Quote">
+    <div className="Quote" id={quoteID}>
       <div className="words-container">
       {words}
       </div>
-      <button onClick={() => addToFavorites(quote)} className="favorite-btn" >Save</button>
+      <button onClick={() => addToFavorites(quote, quoteID)} className="favorite-btn" >Save For Later</button>
     </div>
   )
 }
