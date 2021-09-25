@@ -12,9 +12,9 @@ const Word = ({word}) => {
   const getDefinition = async () => {
     try {
       const data = await fetchDefinition(word)
-      console.log('new definition data here---->',word, data)
+      // console.log('new definition data here---->',word, data)
       // setDefinition(data[0].meanings[0].definitions[0].definition)
-      console.log("here--------->",data[0].meta['app-shortdef'].def[0])
+      // console.log("here--------->",data[0].meta['app-shortdef'].def[0])
       setDefinition(data[0].meta['app-shortdef'].def[0])
       setHasDefinition(true)
       setIsLoading(false)
@@ -36,19 +36,18 @@ const Word = ({word}) => {
 
 
   return (
-    <div className="Word">
+    <div className="Word" key={word}>
       {isLoading && <p>Fetching your quote's context clues!</p>}
       {word.length >= 5 && definition && (
          <>
          <a data-tip data-for={word}> <span className="defined">{word}</span></a>
-        <ReactTooltip id={word} >
+        <ReactTooltip id={word}>
           <span>{definition}</span>
         </ReactTooltip>
         </>
       )}
       {word.length < 5 && <span>{word}</span>}
       {word.length >=5 && !definition && <span>{word}</span>}
-   
     </div>
   )
 }
