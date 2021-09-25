@@ -1,0 +1,24 @@
+.DashboardIndex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1, h2, button {
+  font-family: 'Andika New Basic', sans-serif;
+  font-weight: bold;
+}
+
+.button-container {
+  display: flex;
+}
+
+.theme-btn {
+  margin-right: 4px;
+}
+
+.margin-btn {
+  margin-left: 4px;
+}
+
