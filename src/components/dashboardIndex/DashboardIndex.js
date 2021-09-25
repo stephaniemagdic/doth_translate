@@ -4,7 +4,7 @@ import './DashboardIndex.css';
 const DashboardIndex = () => {
   return (
     <div className="DashboardIndex">
-      <h1>Welcome Lambkin!</h1>
+      <h1>Welcome, Lambkin!</h1>
       <h2>Choose a Quote Category</h2>
       <div className='button-container'>
         <Link to='/category/theme'>
