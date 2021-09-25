@@ -2,12 +2,11 @@ import './Card.css';
 
 const Card = ({cardData, type}) => {
   let componentToRender;
-  console.log("card data-->", cardData)
 
   if (type === 'favorites') {
-    // MODEL COMPONENT WITH ID
     componentToRender = (
-      <div className="favorites" id={cardData.id} key={cardData.id}>
+      // <div className="favorites" id={cardData.id} key={cardData.id}>
+      <div className="favorites">
         {cardData.quote}
         {console.log("favorits card data", cardData)}
       <button>Delete</button>
@@ -15,18 +14,20 @@ const Card = ({cardData, type}) => {
       </div>
       
     )
-  } else if (type === 'submissions') {
-    componentToRender = ( <div className="submissions" id={cardData.id} key={cardData.id}>
+  } else if (type === 'submissions' && cardData.quote) {
+    componentToRender = ( <div className="submissions" >
+      {/* ///saying card data is undefined... */}
       Quote: {cardData.quote.quote}
       Your Interpretation: {cardData.interpretation}
+      {console.log("DATATTTTTTT--", cardData)}
     <button>EDIT</button>
     </div>)
   } else if (type === 'theme-options') {
-    componentToRender = ( <div className="theme-options">
+    componentToRender = ( <div className="theme-options" >
       <button>{cardData}</button>
     </div>)
   } else if (type === 'title-options') {
-    componentToRender = ( <div className="title-options">
+    componentToRender = ( <div className="title-options" >
     <button>{cardData}</button>
   </div>)
   }
