@@ -45,13 +45,13 @@ Cypress.Commands.add('addFavorite', () => {
   cy.get('.favorite-btn').click()
 })
 
-  Cypress.Commands.add('getDefinition', () => {
-    cy.intercept('GET', 'https://dictionaryapi.com/api/v3/references/learners/json/madness.?key=c80e6519-7311-4235-9297-4ba6a1b27611', {
-      statusCode: 200,
-      body: 
-      [{"meta":{"id":"egregious","uuid":"052a338e-1091-4ac1-a839-3e3160516221","src":"learners","section":"alpha","target":{"tuuid":"93e48919-c025-46bd-9f62-f05f87263739","tsrc":"collegiate"},"stems":["egregious","egregiously","egregiousness"],"app-shortdef":{"hw":"egregious","fl":"adjective","def":["TEST DEFINITION HERE"]},"offensive":false},"hwi":{"hw":"egre*gious","prs":[{"ipa":"\u026a\u02c8gri\u02d0\u02a4\u0259s","sound":{"audio":"egregi01"}}]},"fl":"adjective","gram":"more ~; most ~","def":[{"sseq":[[["sense",{"sls":["formal"],"dt":[["text","{bc}very bad and easily noticed "],["vis",[{"t":"The article contains a number of {it}egregious{\/it} [={it}glaring, obvious{\/it}] errors."},{"t":"an {it}egregious{\/it} example of political bias"},{"t":"{it}egregious{\/it} misconduct"}]]]}]]]}],"uros":[{"ure":"egre*gious*ly","fl":"adverb"},{"ure":"egre*gious*ness","fl":"noun","gram":"noncount"}],"shortdef":["very bad and easily noticed"]}]
-      })
+Cypress.Commands.add('getDefinition', () => {
+  cy.intercept('GET', 'https://dictionaryapi.com/api/v3/references/learners/json/madness.?key=c80e6519-7311-4235-9297-4ba6a1b27611', {
+    statusCode: 200,
+    body: 
+    [{"meta":{"id":"egregious","uuid":"052a338e-1091-4ac1-a839-3e3160516221","src":"learners","section":"alpha","target":{"tuuid":"93e48919-c025-46bd-9f62-f05f87263739","tsrc":"collegiate"},"stems":["egregious","egregiously","egregiousness"],"app-shortdef":{"hw":"egregious","fl":"adjective","def":["TEST DEFINITION HERE"]},"offensive":false},"hwi":{"hw":"egre*gious","prs":[{"ipa":"\u026a\u02c8gri\u02d0\u02a4\u0259s","sound":{"audio":"egregi01"}}]},"fl":"adjective","gram":"more ~; most ~","def":[{"sseq":[[["sense",{"sls":["formal"],"dt":[["text","{bc}very bad and easily noticed "],["vis",[{"t":"The article contains a number of {it}egregious{\/it} [={it}glaring, obvious{\/it}] errors."},{"t":"an {it}egregious{\/it} example of political bias"},{"t":"{it}egregious{\/it} misconduct"}]]]}]]]}],"uros":[{"ure":"egre*gious*ly","fl":"adverb"},{"ure":"egre*gious*ness","fl":"noun","gram":"noncount"}],"shortdef":["very bad and easily noticed"]}]
     })
+  })
 
 
 //      setDefinition(data[0].meta['app-shortdef'].def[0])
