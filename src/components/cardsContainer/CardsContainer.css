@@ -1,15 +1,13 @@
-.interpretations {
+/* .interpretations {
 
 }
 
 .favorites {
 
+} */
+
+.titles, .themes {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.titles {
-
-}
-
-.themes {
-
-}
