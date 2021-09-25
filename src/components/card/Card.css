@@ -1,11 +1,7 @@
-/* .favorites {
-
-}
-
-.submissions {
+/* .favorites, .submissions {
 
 } */
 
 .theme-options, .title-options {
-
+  margin: 4px;
 }
