@@ -14,7 +14,7 @@ function App() {
 
   const addInterpretation = (newInterpretation) => {
     //if empty string or undefined.
-    if (newInterpretation) {
+    if (!newInterpretation) {
       return
     }
     setUserSavedInterpretations([...userSavedInterpretations, newInterpretation])
@@ -67,7 +67,7 @@ function App() {
       <Route
       exact path= "/category/title/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={() => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites}/>}
+      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match}/>}
       />
 
       {/* <Route
