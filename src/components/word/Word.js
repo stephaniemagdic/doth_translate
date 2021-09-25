@@ -11,8 +11,10 @@ const Word = ({word}) => {
   const getDefinition = async () => {
     try {
       const data = await fetchDefinition(word)
-      console.log('data---->', data)
-      setDefinition(data[0].meanings[0].definitions[0].definition)
+      console.log('new definition data here---->',word, data)
+      // setDefinition(data[0].meanings[0].definitions[0].definition)
+      console.log("here--------->",data[0].meta['app-shortdef'].def[0])
+      setDefinition(data[0].meta['app-shortdef'].def[0])
       setHasDefinition(true)
 
     } catch (err) {
