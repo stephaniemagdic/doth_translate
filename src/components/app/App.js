@@ -6,12 +6,12 @@ import { useState, useEffect } from 'react';
 import DashboardIndex from '../dashboardIndex/DashboardIndex'
 import CategoryIndex from '../categoryIndex/CategoryIndex'
 import shakespeareIcon from '../../assets/shakespeare.png';
+import Error from '../error/Error'
 
 
 function App() {
   const [userSavedInterpretations, setUserSavedInterpretations] = useState([])
   const [favorites, setFavorites] = useState([])
-  //Right now we will have our saved interpretations held in app so it can be passed to our my-interpretationIndex
 
   const addInterpretation = (quote, newInterpretation) => {
     //if empty string or undefined.
@@ -22,10 +22,10 @@ function App() {
     console.log("right here-->", {quote: quote.quote, interpretation: newInterpretation, id: Date.now()})
     const storageInterpretations = JSON.stringify([...userSavedInterpretations, {quote: quote, interpretation: newInterpretation, id: Date.now()}]);
     localStorage.setItem('interpretations', storageInterpretations)
+
   }
 
   const addToFavorites = (newFavorite, id) => {
-    // TO DO: only add unique values to favorites.
     if(favorites.includes(newFavorite)) {
       return
     }
@@ -34,7 +34,6 @@ function App() {
     localStorage.setItem('favorites', storageFavorites)
   }
 
-  //get local storage items on render.
   useEffect(
     () => {
       if(localStorage.favorites) {
@@ -46,9 +45,6 @@ function App() {
         setUserSavedInterpretations(retrievedInterpretations)
       }
     }, [])
-
-
-
 
   return (
     <div className="App">
@@ -84,7 +80,7 @@ function App() {
       exact path= "edit/:id"
       render={(match) =><InterpretationIndex isEditing={true}/>}
       /> */}
-      <Route render={() => <p> Error! </p>} />
+      <Route render={() => <Error type='404'/>} />
       </Switch>
       <nav> 
         <Link to="/">
