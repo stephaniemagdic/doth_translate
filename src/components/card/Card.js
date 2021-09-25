@@ -2,18 +2,23 @@ import './Card.css';
 
 const Card = ({cardData, type}) => {
   let componentToRender;
+  console.log("card data-->", cardData)
 
   if (type === 'favorites') {
+    // MODEL COMPONENT WITH ID
     componentToRender = (
-      <div className="favorites">
-        {cardData}
+      <div className="favorites" id={cardData.id} key={cardData.id}>
+        {cardData.quote}
+        {console.log("favorits card data", cardData)}
       <button>Delete</button>
+      <button>Interpret</button>
       </div>
       
     )
   } else if (type === 'submissions') {
-    componentToRender = ( <div className="submissions">
-      {cardData}
+    componentToRender = ( <div className="submissions" id={cardData.id} key={cardData.id}>
+      Quote: {cardData.quote.quote}
+      Your Interpretation: {cardData.interpretation}
     <button>EDIT</button>
     </div>)
   } else if (type === 'theme-options') {
