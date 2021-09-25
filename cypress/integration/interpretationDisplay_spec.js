@@ -26,12 +26,8 @@ describe('Interpretation Display User Flows', () => {
     cy.get('.Quote')
     cy.contains( 'Which')
     cy.contains('thing')
-    // cy.contains('egregiously').trigger('hover')
     cy.contains('very bad and easily noticed')
     cy.get('.defined').should('have.length', 18)
-    // cy.get('.defined > :nth-child(14) ').contains('very bad and easily noticed')
-
-    //  expect(Cypress.$('.datatable > tr')).to.have.lengthOf(4)
   });
 
   it('A user should see a definitions for words over 5 letters in length', () => {
@@ -43,21 +39,37 @@ describe('Interpretation Display User Flows', () => {
     cy.contains('thing')
     cy.contains('TEST DEFINITION HERE')
     cy.get('.defined').should('have.length', 18)
-    // cy.get('.defined > :nth-child(14) ').contains('very bad and easily noticed')
-    //  expect(Cypress.$('.datatable > tr')).to.have.lengthOf(4)
-
-    //
   });
   
 
   it('A user should see a quote randomly quote by chosen theme on page load', () => {
-    // cy.fetchQuoteByTheme()
-    // cy.visit('http://localhost:3000/category/theme/love')
-    // cy.get('.Quote')
-    // cy.contains('Do protest never loved myself till now infixed beheld myself drawn in the flattering table of her eye.')
+    cy.fetchQuoteByTheme()
+    cy.visit('http://localhost:3000/category/theme/love')
+    cy.get('.Quote')
+    cy.contains('Do')
+    cy.contains('protest')
+    cy.contains('never')
+    cy.contains('loved')
+    cy.contains('myself')
+    cy.contains('till')
+    cy.contains('now')
+    cy.contains('infixed')
+    cy.contains('beheld')
+    cy.get('.Word').should('have.length', 18)
   });
   //a user should be able to click a button to see a randomly generated quote.
   
-  //definitions are fetched and on hover definitions can be seen.
+  it('A user should be able to click the save button to save a quote', () => {
+    cy.fetchQuoteByTitle()
+    cy.visit('http://localhost:3000/category/title/othello')
+    // cy.get('.Quote')
+    //test by getting id.
+    //'[data-test-id="test-example"]'
+    //cy.get('[data-test-id="test-example"]').should('have.length', 5)
+    cy.get('[id=test]')
+    cy.get('.favorite-btn').click()
+    cy.visit('http://localhost:3000/my-interpretations')
+    cy.get('[id=test]')
+  });
 
 })
