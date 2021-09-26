@@ -3,6 +3,6 @@
   flex-direction: column
 }
 
-span {
+.error span {
   display: block;
 }
