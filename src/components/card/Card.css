@@ -5,3 +5,19 @@
 .theme-options, .title-options {
   margin: 4px;
 }
+
+.bin {
+  height: 30px;
+}
+
+.pencil {
+  height: 20px;
+}
+
+.arrow {
+  height: 20px;
+}
+
+.Card button {
+  border: none;
+}
