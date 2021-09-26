@@ -54,6 +54,20 @@ function App() {
     }
   }
 
+  const editInterpretation = (quote, currentInterpretation, id) => {
+    //editInterpretation(quote, currentInterpretation, interpretationId)
+    const replacementInterpretationObj = {quote: quote.quote, interpretation: currentInterpretation, id: id}
+    const toSave = userSavedInterpretations.filter((interpretation) => {
+      return interpretation.id !== id
+    })
+    console.log("here are the replacements", [...toSave, replacementInterpretationObj])
+
+
+    setUserSavedInterpretations([...toSave, replacementInterpretationObj])
+    const storageInterpretations = JSON.stringify([...toSave, replacementInterpretationObj]);
+    localStorage.setItem('interpretations', storageInterpretations)
+  }
+
   useEffect(
     () => {
       checkLocalStorage()
@@ -73,12 +87,12 @@ function App() {
       <Route
       exact path= "/category/theme/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match}/>}
+      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={false} />}
       />
       <Route
       exact path= "/category/title/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match}/>}
+      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={false}/>}
       />
 
       {/* <Route
@@ -89,10 +103,10 @@ function App() {
       exact path= "/my-interpretations"
       render={(match) =><IntepretationsSubmisssionsIndex favorites={favorites} userSavedInterpretations={userSavedInterpretations} deleteQuoteFromStorage={deleteQuoteFromStorage}/>}
       />
-      {/* <Route
-      exact path= "edit/:id"
-      render={(match) =><InterpretationIndex isEditing={true}/>}
-      /> */}
+      <Route
+      exact path= "/edit/:id"
+      render={(match) =><InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={true} editInterpretation={editInterpretation}/>}
+      />
       <Route render={() => <Error type='404'/>} />
       </Switch>
       <nav className='back-to-main'> 
