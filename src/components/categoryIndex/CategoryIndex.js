@@ -2,8 +2,9 @@ import {useEffect, useState} from 'react';
 import {fetchAllTitles, fetchAllThemes} from '../../util.js'
 import CardsContainer from '../cardsContainer/CardsContainer';
 import loadingClock from '../../assets/Loading.png'
+import './CategoryIndex.css'
 
-export const CategoryIndex = ({category}) => {
+const CategoryIndex = ({category}) => {
   console.log("match-->", category.match.params.type)
   const [allTitles, setAllTitles] = useState([])
   const [allThemes, setAllThemes] = useState([])
@@ -47,11 +48,11 @@ export const CategoryIndex = ({category}) => {
   }, [])
 
   return (
-    <>
+    <div className="CategoryIndex">
     {isLoading && <> <p>Loading...</p><img src={loadingClock} alt="old clock "></img></>}
     {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
     {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }
-    </>
+    </div>
   )
 }
 
