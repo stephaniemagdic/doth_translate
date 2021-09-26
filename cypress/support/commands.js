@@ -53,6 +53,5 @@ Cypress.Commands.add('getDefinition', () => {
     })
   })
 
-
-//      setDefinition(data[0].meta['app-shortdef'].def[0])
+//setDefinition(data[0].meta['app-shortdef'].def[0])
 
