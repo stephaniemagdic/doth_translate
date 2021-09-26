@@ -34,6 +34,14 @@ function App() {
     const storageFavorites = JSON.stringify([...favorites, favoriteObj]);
     localStorage.setItem('favorites', storageFavorites)
   }
+
+  const deleteQuoteFromStorage = (id) => {
+    const retrievedItems = JSON.parse(localStorage.getItem('favorites'))
+    const newList = retrievedItems.filter(quote => quote.id !== id);
+    const storageItems = JSON.stringify([...newList]);
+    localStorage.setItem('favorites', storageItems)
+    setFavorites(newList)
+  }
   
   const checkLocalStorage = () => {
     if(localStorage.favorites) {
@@ -65,7 +73,7 @@ function App() {
       <Route
       exact path= "/category/theme/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={() => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites}/>}
+      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match}/>}
       />
       <Route
       exact path= "/category/title/:choice"
@@ -79,7 +87,7 @@ function App() {
       /> */}
       <Route
       exact path= "/my-interpretations"
-      render={(match) =><IntepretationsSubmisssionsIndex favorites={favorites} userSavedInterpretations={userSavedInterpretations}/>}
+      render={(match) =><IntepretationsSubmisssionsIndex favorites={favorites} userSavedInterpretations={userSavedInterpretations} deleteQuoteFromStorage={deleteQuoteFromStorage}/>}
       />
       {/* <Route
       exact path= "edit/:id"
