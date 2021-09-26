@@ -18,32 +18,36 @@ function App() {
     // if (!newInterpretation) {
     //   return
     // }
-    setUserSavedInterpretations([...userSavedInterpretations, newInterpretation])
-    console.log("right here-->", {quote: quote.quote, interpretation: newInterpretation, id: Date.now()})
-    const storageInterpretations = JSON.stringify([...userSavedInterpretations, {quote: quote, interpretation: newInterpretation, id: Date.now()}]);
+    const interpretationObj = {quote: quote.quote, interpretation: newInterpretation, id: Date.now()}
+    setUserSavedInterpretations([...userSavedInterpretations,interpretationObj])
+    const storageInterpretations = JSON.stringify([...userSavedInterpretations, interpretationObj]);
     localStorage.setItem('interpretations', storageInterpretations)
-
   }
 
   const addToFavorites = (newFavorite, id) => {
     if(favorites.includes(newFavorite)) {
       return
     }
-    setFavorites([...favorites, newFavorite])
-    const storageFavorites = JSON.stringify([...favorites, {quote: newFavorite, id: id}]);
+    const favoriteObj = {quote: newFavorite, id: id}
+    setFavorites([...favorites, favoriteObj])
+    const storageFavorites = JSON.stringify([...favorites, favoriteObj]);
     localStorage.setItem('favorites', storageFavorites)
+  }
+  
+  const checkLocalStorage = () => {
+    if(localStorage.favorites) {
+      const retrievedFavorites = JSON.parse(localStorage.getItem('favorites'))
+      setFavorites(retrievedFavorites)
+    }
+    if(localStorage.interpretations) {
+      const retrievedInterpretations = JSON.parse(localStorage.getItem('interpretations'))
+      setUserSavedInterpretations(retrievedInterpretations)
+    }
   }
 
   useEffect(
     () => {
-      if(localStorage.favorites) {
-        const retrievedFavorites = JSON.parse(localStorage.getItem('favorites'))
-        setFavorites(retrievedFavorites)
-      }
-      if(localStorage.interpretations) {
-        const retrievedInterpretations = JSON.parse(localStorage.getItem('interpretations'))
-        setUserSavedInterpretations(retrievedInterpretations)
-      }
+      checkLocalStorage()
     }, [])
 
   return (
