@@ -1,7 +1,25 @@
 import { Link } from 'react-router-dom';
 import './DashboardIndex.css';
+import {useEffect} from 'react';
+import {fetchAllTitles, fetchAllThemes} from '../../util.js'
 
 const DashboardIndex = () => {
+
+  const setCategoriesInLocalStorage = () => {
+    fetchAllTitles().then((data) => {
+      const titleOptions = JSON.stringify(data.quote);
+      localStorage.setItem('titles', titleOptions)
+      })
+    fetchAllThemes().then((data) => {
+      const themeOptions = JSON.stringify(data.quote);
+      localStorage.setItem('themes', themeOptions)
+      })
+  }
+
+  useEffect(() => {
+    setCategoriesInLocalStorage()
+  }, [])
+
   return (
     <div className="DashboardIndex">
       <nav>
