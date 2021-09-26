@@ -22,5 +22,7 @@ describe('My Interpretations Display User Flows', () => {
   //TESTS TO WRITE AFTER FUNCTIONALITY IS BUILT
   //A user should be able to click edit to be taken back to the edit display to edit an interpretation.
   //A user should be able to click the interpret button to be taken back to interpret the quote of choice
+  //
+  //Add 404 error handling
 
 })
