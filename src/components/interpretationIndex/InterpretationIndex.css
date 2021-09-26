@@ -1,15 +1,16 @@
 input {
-  height: 40vh;
+  height: 60vh;
   width: 100vw;
   font: 2em/.25em Arial, Helvetica, sans-serif;
   padding-left:0;
-
 }
 
 .quoteContainer {
-  height: 40vh
+  height: 40vh;
 }
+
 
 .InterpretationIndex {
   height: 100vh
 }
+

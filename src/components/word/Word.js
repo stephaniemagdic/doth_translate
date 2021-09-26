@@ -40,14 +40,14 @@ const Word = ({word}) => {
       {isLoading && <p>Fetching your quote's context clues!</p>}
       {word.length >= 5 && definition && (
          <>
-         <a data-tip data-for={word}> <span className="defined">{word}</span></a>
+         <a data-tip data-for={word}> <span className="defined word">{word}</span></a>
         <ReactTooltip id={word}>
           <span>{definition}</span>
         </ReactTooltip>
         </>
       )}
-      {word.length < 5 && <span>{word}</span>}
-      {word.length >=5 && !definition && <span>{word}</span>}
+      {word.length < 5 && <span className="word">{word}</span>}
+      {word.length >=5 && !definition && <span className="word">{word}</span>}
     </div>
   )
 }

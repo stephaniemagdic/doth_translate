@@ -2,6 +2,30 @@
   margin: 0, auto;
 }
 
+.word {
+  font-size: 20px;
+}
+
 .Quote {
   margin: 20px;
+  display: flex;
 }
+
+.saveIcon {
+  height: 30px;
+}
+
+.favorite-btn {
+  border: none;
+}
+
+.saveIcon:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.saveIcon:disabled {
+  background: #dddddd;
+}
+
+

@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  height: 80vh;
 }
 
 h1, h2, button {
@@ -22,3 +23,12 @@ h1, h2, button {
   margin-left: 4px;
 }
 
+.logo {
+  /* display: flex;
+  align-items: flex-start */
+}
+
+button {
+  background-color: transparent;
+  border-radius: 20% 
+}

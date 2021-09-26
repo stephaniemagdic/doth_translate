@@ -25,6 +25,7 @@ function App() {
   }
 
   const addToFavorites = (newFavorite, id) => {
+    //TO DO: fix this or disable button so can't click a second time.
     if(favorites.includes(newFavorite)) {
       return
     }
@@ -86,7 +87,7 @@ function App() {
       /> */}
       <Route render={() => <Error type='404'/>} />
       </Switch>
-      <nav> 
+      <nav className='back-to-main'> 
         <Link to="/">
           <img src={shakespeareIcon} alt="Shakespeare icon" className="shakespeare"></img>
         </Link>

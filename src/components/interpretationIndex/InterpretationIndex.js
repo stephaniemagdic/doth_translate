@@ -71,7 +71,7 @@
         </div>
         <input
           type='text'
-          placeholder='Type your interpretation here'
+          placeholder='Type your interpretation here...'
           onChange={(event) => handleChange(event)}
         />
         <button onClick={() => addInterpretation(quote, currentInterpretation)}
