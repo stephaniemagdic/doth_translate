@@ -2,6 +2,7 @@ import './Card.css';
 import bin from '../../assets/bin.png';
 import pencil from '../../assets/pencil.png'
 import arrow from '../../assets/right-arrow.png'
+import {Link} from 'react-router-dom'
 
 const Card = ({cardData, type, deleteQuoteFromStorage}) => {
   let componentToRender;
@@ -24,7 +25,7 @@ const Card = ({cardData, type, deleteQuoteFromStorage}) => {
       <div className="submissions" >
         <h3>Quote:</h3> <p> {cardData.quote} </p>
         <h3>Your Interpretation:</h3> <p> {cardData.interpretation} </p>
-        <button><img src={pencil} alt='pencil' className="pencil"></img></button>
+        <button><Link to={`edit/${cardData.id}`}><img src={pencil} alt='pencil' className="pencil"></img></Link></button>
       </div> 
     )
   } else if (type === 'theme-options') {
