@@ -16,7 +16,6 @@ const CategoryIndex = ({category}) => {
     try {
       const data = await fetchAllTitles()
       setAllTitles(data.quote)
-      setIsLoading(false)    
     } catch (err) {
       setError("no options found")
     }
@@ -26,7 +25,6 @@ const CategoryIndex = ({category}) => {
     try {
       const data = await fetchAllThemes()
       setAllThemes(data.quote)
-      setIsLoading(false)
     } catch (err) {
       setError("no options found")
     }
