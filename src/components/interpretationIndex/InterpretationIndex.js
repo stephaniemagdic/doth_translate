@@ -3,6 +3,7 @@
   import Quote from '../quote/Quote.js'
   import './InterpretationIndex.css'
   import {Link} from 'react-router-dom';
+  import Error from '../error/Error'
 
   const InterpretationIndex = ({addInterpretation, addToFavorites, match}) => {
     const [quote, setQuote] = useState('')
@@ -15,7 +16,7 @@
         const data = await fetchQuoteByTheme(theme)
         setQuote({quote: data.quote.quote, id: data.quote.id})    
       } catch (err) {
-        setError(err)
+        setError("no quote found")
       }
     }
 
@@ -24,23 +25,21 @@
         const data = await fetchQuoteByTitle(title)
         setQuote({quote: data.quote.quote, id: data.quote.id})
       } catch (err) {
-        setError(err)
+        setError("no quote found")
       }
     }
 
     useEffect(() => {
       if ( window.location.href.includes('/category/title/')) {
-        // fetchTitleQuote(match.match.params.choice)
         const urlParams = window.location.href.split("/")
-        const index = (window.location.href.split("/").indexOf('title')) + 1
-        const param = urlParams[index]
+        const choiceIndex = (window.location.href.split("/").indexOf('title')) + 1
+        const param = urlParams[choiceIndex]
         fetchTitleQuote(param)     
       } else if ( window.location.href.includes('/category/theme/') ) {
-        // fetchThemeQuote(match.match.params.choice)
-       const urlParams = window.location.href.split("/")
-       const index = (window.location.href.split("/").indexOf('theme')) + 1
-       const param = urlParams[index]
-       fetchThemeQuote(param)
+        const urlParams = window.location.href.split("/")
+        const choiceIndex = (window.location.href.split("/").indexOf('theme')) + 1
+        const param = urlParams[choiceIndex]
+        fetchThemeQuote(param)
       }    
     }, ([]))
 
@@ -53,6 +52,7 @@
 
     return (
       <div className="InterpretationIndex">
+        {error && <Error type={error}/>}
         <div className="quote-container">
           <nav>
             <button>
@@ -67,8 +67,6 @@
               CHOOSE A NEW TOPIC
             </button>
           </nav>
-          {/* <p>TEST -- INTERPRETATION INDEX</p>
-          <p>TEST -- {quote}</p> */}
           {quote && <Quote quote={quote} addToFavorites={addToFavorites}/>}
         </div>
         <input
@@ -79,7 +77,7 @@
         <button onClick={() => addInterpretation(quote, currentInterpretation)}
         className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
         <Link to='/my-interpretations' >
-          <button className='my-interpretations-btn'>
+          <button className='my-interpretations-btn' >
             GO TO MY INTERPRETATIONS
           </button>
         </Link>
