@@ -4,12 +4,16 @@
   import './InterpretationIndex.css'
   import {Link} from 'react-router-dom';
   import Error from '../error/Error'
+import InterpretationSubmissionIndex from '../intepretationSubmissionsIndex/IntepretationSubmissionsIndex.js';
 
-  const InterpretationIndex = ({addInterpretation, addToFavorites, match}) => {
+  const InterpretationIndex = ({addInterpretation, addToFavorites, match, isEditing, editInterpretation}) => {
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
     const [currentInterpretation, setCurrentInterpretation] = useState('')
-    const [isDisabled, setIsDisabled] = useState(true)
+    const [isDisabled, setIsDisabled] = useState(true);
+    const [editedInterpretation, setEditedInterpretation] = useState("Type your interpretation here...")
+    const [interpretationId, setInterpretationId] = useState(null)
+    
 
     const fetchThemeQuote = async (theme) => {
       try {
@@ -29,7 +33,27 @@
       }
     }
 
+    const findQuoteFromStorageById = () => {
+      const retrievedItems = JSON.parse(localStorage.getItem('interpretations'))
+      const paramIndex = window.location.href.split('/').indexOf('edit') + 1;
+      const quoteId = window.location.href.split('/')[paramIndex]
+      console.log(quoteId)
+      console.log("retrievedItems", retrievedItems)
+      const newList = retrievedItems.filter(quote => parseInt(quote.id) === parseInt(quoteId));
+      console.log(newList[0].quote)
+      // const storageItems = JSON.stringify([...newList]);
+      // localStorage.setItem('favorites', storageItems)
+      // setFavorites(newList)
+      setQuote({quote:newList[0].quote})
+      setEditedInterpretation(newList[0].interpretation)
+      setInterpretationId(newList[0].id)
+    }
+
     useEffect(() => {
+      if (isEditing) {
+        findQuoteFromStorageById()
+      }
+      if (!isEditing) {
       if ( window.location.href.includes('/category/title/')) {
         const urlParams = window.location.href.split("/")
         const choiceIndex = (window.location.href.split("/").indexOf('title')) + 1
@@ -40,7 +64,7 @@
         const choiceIndex = (window.location.href.split("/").indexOf('theme')) + 1
         const param = urlParams[choiceIndex]
         fetchThemeQuote(param)
-      }    
+      }  }  
     }, ([]))
 
     const handleChange = (event) => {
@@ -49,9 +73,18 @@
         setIsDisabled(false)
       }
     }
+    const handleEditChange = (event) => {
+      setEditedInterpretation(event.target.value)
+      if (event.target.value) {
+        setIsDisabled(false)
+      }
+    }
 
     return (
+
       <div className="InterpretationIndex">
+        { !isEditing && (
+          <>
         {error && <Error type={error}/>}
         <div className="quote-container">
           <nav>
@@ -81,6 +114,46 @@
             GO TO MY INTERPRETATIONS
           </button>
         </Link>
+        </>
+        )
+  }
+
+{ isEditing && (
+          <>
+        {error && <Error type={error}/>}
+        <div className="quote-container">
+          <nav>
+            <button>
+              GET A NEW QUOTE
+            </button>
+            <Link to="/">
+            <button>
+              CHOOSE A NEW CATEGORY
+            </button>
+            </Link>
+            <button>
+              CHOOSE A NEW TOPIC
+            </button>
+          </nav>
+          {quote && <Quote quote={quote} addToFavorites={addToFavorites}/>}
+        </div>
+        <input
+          type='text'
+          value={editedInterpretation}
+          onChange={(event) => handleEditChange(event)}
+        />
+        <button onClick={() => editInterpretation(quote, editedInterpretation, interpretationId)}
+        className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
+        <Link to='/my-interpretations' >
+          <button className='my-interpretations-btn' >
+            GO TO MY INTERPRETATIONS
+          </button>
+        </Link>
+        </>
+        )
+  }
+
+
       </div>
     )
   }
