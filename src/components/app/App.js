@@ -34,6 +34,15 @@ function App() {
     const storageFavorites = JSON.stringify([...favorites, favoriteObj]);
     localStorage.setItem('favorites', storageFavorites)
   }
+
+  const deleteQuoteFromStorage = (id) => {
+    const retrievedItems = JSON.parse(localStorage.getItem('favorites'))
+    console.log("id searching for ",id)
+    const newList = retrievedItems.filter(quote =>  quote.id !== id);
+    const storageItems = JSON.stringify([...newList]);
+    localStorage.setItem('favorites', storageItems)
+    setFavorites(newList)
+  }
   
   const checkLocalStorage = () => {
     if(localStorage.favorites) {
@@ -46,6 +55,17 @@ function App() {
     }
   }
 
+  const editInterpretation = (quote, currentInterpretation, id) => {
+    //editInterpretation(quote, currentInterpretation, interpretationId)
+    const replacementInterpretationObj = {quote: quote.quote, interpretation: currentInterpretation, id: id}
+    const toSave = userSavedInterpretations.filter((interpretation) => {
+      return interpretation.id !== id
+    })
+    setUserSavedInterpretations([...toSave, replacementInterpretationObj])
+    const storageInterpretations = JSON.stringify([...toSave, replacementInterpretationObj]);
+    localStorage.setItem('interpretations', storageInterpretations)
+  }
+
   useEffect(
     () => {
       checkLocalStorage()
@@ -53,6 +73,7 @@ function App() {
 
   return (
     <div className="App">
+       <h1 className="logo"> Doth Translate </h1>
       <Switch>
       <Route
         exact path = "/"
@@ -65,12 +86,12 @@ function App() {
       <Route
       exact path= "/category/theme/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={() => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites}/>}
+      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={false} />}
       />
       <Route
       exact path= "/category/title/:choice"
       // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match}/>}
+      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={false}/>}
       />
 
       {/* <Route
@@ -79,12 +100,12 @@ function App() {
       /> */}
       <Route
       exact path= "/my-interpretations"
-      render={(match) =><IntepretationsSubmisssionsIndex favorites={favorites} userSavedInterpretations={userSavedInterpretations}/>}
+      render={(match) =><IntepretationsSubmisssionsIndex favorites={favorites} userSavedInterpretations={userSavedInterpretations} deleteQuoteFromStorage={deleteQuoteFromStorage}/>}
       />
-      {/* <Route
-      exact path= "edit/:id"
-      render={(match) =><InterpretationIndex isEditing={true}/>}
-      /> */}
+      <Route
+      exact path= "/edit/:id"
+      render={(match) =><InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={true} editInterpretation={editInterpretation}/>}
+      />
       <Route render={() => <Error type='404'/>} />
       </Switch>
       <nav className='back-to-main'> 

@@ -3,23 +3,20 @@ import {fetchAllTitles, fetchAllThemes} from '../../util.js'
 import CardsContainer from '../cardsContainer/CardsContainer';
 import loadingClock from '../../assets/Loading.png'
 import './CategoryIndex.css'
+import Error from '../error/Error'
 
 const CategoryIndex = ({category}) => {
-  console.log("match-->", category.match.params.type)
   const [allTitles, setAllTitles] = useState([])
   const [allThemes, setAllThemes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   const fetchTitles = async () => {
     try {
       const data = await fetchAllTitles()
       setAllTitles(data.quote)
-      setIsLoading(false)
-      console.log("data in fetchAllTitles", data)
-      
     } catch (err) {
-      console.log(err)
-      // setError(err)
+      setError("no options found")
     }
   }
 
@@ -27,28 +24,38 @@ const CategoryIndex = ({category}) => {
     try {
       const data = await fetchAllThemes()
       setAllThemes(data.quote)
-      setIsLoading(false)
-      console.log("data in fetchAllThemes", data)
     } catch (err) {
-      console.log(err)
-      // setError(err)
+      setError("no options found")
     }
   }
-
-
-  //Next Step.. pass data to CardsContainer...
 
   useEffect(() => {
     const fetchType = category.match.params.type
     if(fetchType === 'theme' ) {
-      fetchThemes()
+      if (localStorage.themes) {
+        const retrievedThemes = JSON.parse(localStorage.getItem('themes'))
+        setAllThemes(retrievedThemes)
+        setIsLoading(false)
+      } else {
+        fetchThemes()
+        setIsLoading(false)
+      }
+     
     } else if (fetchType === 'title') {
-      fetchTitles()
+      if (localStorage.titles) {
+        const retrievedTitles = JSON.parse(localStorage.getItem('titles'))
+        setAllTitles(retrievedTitles)
+        setIsLoading(false)
+      } else {
+        fetchTitles()
+        setIsLoading(false)
+      }
     }
   }, [])
 
   return (
     <div className="CategoryIndex">
+    {error && <Error type={error}/>}
     {isLoading && <> <p>Loading...</p><img src={loadingClock} alt="old clock "></img></>}
     {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
     {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }

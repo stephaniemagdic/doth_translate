@@ -3,41 +3,36 @@ import {fetchDefinition} from '../../util.js'
 import ReactTooltip from 'react-tooltip';
 import './Word.css'
 
-const Word = ({word}) => {
+const Word = ({word, countDef}) => {
+  // countDef()
   const [definition, setDefinition] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
+  // const [isLoading, setIsLoading] = useState(true)
+  // const [error, setError] = useState(null)
 
-  //this will be used for styling purposes.
-  const [hasDefinition, setHasDefinition] = useState(false)
   const getDefinition = async () => {
     try {
       const data = await fetchDefinition(word)
-      // console.log('new definition data here---->',word, data)
-      // setDefinition(data[0].meanings[0].definitions[0].definition)
-      // console.log("here--------->",data[0].meta['app-shortdef'].def[0])
       setDefinition(data[0].meta['app-shortdef'].def[0])
-      setHasDefinition(true)
-      setIsLoading(false)
-
+      // setIsLoading(false)
     } catch (err) {
-      // setError(err)
-      console.log(err)
-      setIsLoading(false)
+      //data cleaning function?
+      // console.log("error retrieving a definition for",)
+      // setIsLoading(false)
     }
   }
 
   useEffect(() => {  
     if (word.length >= 5 ) {
-    getDefinition();
+      getDefinition();
     } else {
-      setIsLoading(false)
+      // setIsLoading(false)
     }
   }, [])
 
-
   return (
     <div className="Word" key={word}>
-      {isLoading && <p>Fetching your quote's context clues!</p>}
+      {/* {error && <p>{error}</p>} */}
+      {/* {isLoading && <p>Fetching your quote's context clues!</p>} */}
       {word.length >= 5 && definition && (
          <>
          <a data-tip data-for={word}> <span className="defined word">{word}</span></a>
@@ -54,4 +49,3 @@ const Word = ({word}) => {
 
 export default Word;
 
-//to do.. .if definition is undefined ... 

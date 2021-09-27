@@ -21,3 +21,17 @@
 .Card button {
   border: none;
 }
+
+.favoites {
+  color: white;
+}
+
+.interpretation-container {
+  display: flex;
+}
+
+.submissions {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}

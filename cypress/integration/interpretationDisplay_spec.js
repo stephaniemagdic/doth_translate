@@ -6,6 +6,8 @@ describe('Interpretation Display User Flows', () => {
   //   cy.contains('But lest myself be guilty to self wrong, i\'ll stop mine ears against the mermaid\'s song')
   // });
 
+  // tests for what is seen on inital page load.
+
   it('A user should see definitions available for words over 5 letters in length if the API has a definition avaialable', () => {
     cy.getDefinition()
     cy.fetchQuoteByTitle()
@@ -69,7 +71,7 @@ describe('Interpretation Display User Flows', () => {
   });
 
 
-  it('A user should be able to submit their interpretation to be visible on their interpetations/favorites paged', () => {
+  it('A user should be able to click on submit interpretation to save their interpetation', () => {
     cy.visit('http://localhost:3000/category/theme/love')
     cy.get('input').type('HERE IS MY INTERPRETATION')
     cy.should('have.value', 'HERE IS MY INTERPRETATION')
@@ -78,7 +80,7 @@ describe('Interpretation Display User Flows', () => {
     cy.get('.interpretations').should('contain', 'HERE IS MY INTERPRETATION') 
   });
 
-  it('A user should be taken to their favorites/saved interpretations dashboard when clicking on my intepretations button', () => {
+  it('A user should be taken to their favorites/saved interpretations dashboard when clicking on go to my interpretations button', () => {
     cy.visit('http://localhost:3000/category/theme/love')
     cy.get('.my-interpretations-btn').click()
     cy.url().should('include', 'my-interpretations')

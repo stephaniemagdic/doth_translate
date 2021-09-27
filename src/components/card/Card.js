@@ -2,14 +2,20 @@ import './Card.css';
 import bin from '../../assets/bin.png';
 import pencil from '../../assets/pencil.png'
 import arrow from '../../assets/right-arrow.png'
+import {Link} from 'react-router-dom'
 
-const Card = ({cardData, type}) => {
+const Card = ({cardData, type, deleteQuoteFromStorage}) => {
   let componentToRender;
+
+  const handleDeleteQuote = (id) => {
+    deleteQuoteFromStorage(id)
+  }
+
   if (type === 'favorites') {
     componentToRender = (
       <div className="favorites" id={cardData.id} key={cardData.id}>
-        {cardData.quote}
-      <button><img src={bin} alt='trash bin' className="bin"></img></button>
+        <p>{cardData.quote}</p>
+      <button onClick={() => handleDeleteQuote(cardData.id)}><img src={bin} alt='trash bin' className="bin"></img></button>
       <button><img src={arrow} alt="right arrow" className="arrow"></img></button>
       </div>
       
@@ -17,9 +23,11 @@ const Card = ({cardData, type}) => {
   } else if (type === 'submissions' ) {
     componentToRender = ( 
       <div className="submissions" >
-        <h3>Quote:</h3> <p> {cardData.quote} </p>
-        <h3>Your Interpretation:</h3> <p> {cardData.interpretation} </p>
-        <button><img src={pencil} alt='pencil' className="pencil"></img></button>
+        <div><h3>Quote:</h3><p> {cardData.quote} </p></div>
+        <div>
+          <h3 className='interpretation-container'>Your Interpretation:</h3><p> {cardData.interpretation} </p>
+          <div><button><Link to={`edit/${cardData.id}`}><img src={pencil} alt='pencil' className="pencil"></img></Link></button></div>
+        </div>
       </div> 
     )
   } else if (type === 'theme-options') {

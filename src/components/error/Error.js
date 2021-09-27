@@ -15,7 +15,7 @@ const Error = ({type}) => {
         <h2>Page Not Found</h2>
       </div>
     )
-  } else if (type > 400 || type === "no quote found") {
+  } else if (type > 400 || type === "no quote found" || "no options found") {
     quote = (
       <div className='error-quote'>
         <span> Oh, conspiracy, are you ashamed to show your face even at night, </span>

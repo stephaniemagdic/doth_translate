@@ -1,15 +1,15 @@
-// Cypress.Commands.add('fetchRandomQuote', () => {
-//   cy.intercept('GET', 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/single', {
-//     statusCode: 200,
-//     body: { quote: {
-//       id: "266603a8-9d5d-11ea-965d-ac2b6ef23411",
-//       play: "(The Comedy of Errors, Act 12, Scene 64)",
-//       quote: "But lest myself be guilty to self wrong, i'll stop mine ears against the mermaid's song.",
-//       rating: 0
-//     }
-//   }
-//   })
-// })
+Cypress.Commands.add('fetchRandomQuote', () => {
+  cy.intercept('GET', 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/single', {
+    statusCode: 200,
+    body: { quote: {
+      id: "266603a8-9d5d-11ea-965d-ac2b6ef23411",
+      play: "(The Comedy of Errors, Act 12, Scene 64)",
+      quote: "But lest myself be guilty to self wrong, i'll stop mine ears against the mermaid's song.",
+      rating: 0
+    }
+  }
+  })
+})
 
 Cypress.Commands.add('fetchQuoteByTitle', () => {
   cy.intercept('GET', 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/quotes/by-play/othello', {
@@ -34,14 +34,14 @@ Cypress.Commands.add('fetchQuoteByTheme', () => {
 })
 
 Cypress.Commands.add('addInterpretation', () => {
-  cy.visit('http://localhost:3002/category/theme/love')
+  cy.visit('http://localhost:3000/category/theme/love')
   cy.get('input').type('HERE IS MY INTERPRETATION')
   cy.get('.submit-btn').click()
 })
 
 Cypress.Commands.add('addFavorite', () => {
   cy.fetchRandomQuote()
-  cy.visit('http://localhost:3002/category/theme/love')
+  cy.visit('http://localhost:3000/category/theme/love')
   cy.get('.favorite-btn').click()
 })
 
@@ -52,6 +52,13 @@ Cypress.Commands.add('getDefinition', () => {
     [{"meta":{"id":"egregious","uuid":"052a338e-1091-4ac1-a839-3e3160516221","src":"learners","section":"alpha","target":{"tuuid":"93e48919-c025-46bd-9f62-f05f87263739","tsrc":"collegiate"},"stems":["egregious","egregiously","egregiousness"],"app-shortdef":{"hw":"egregious","fl":"adjective","def":["TEST DEFINITION HERE"]},"offensive":false},"hwi":{"hw":"egre*gious","prs":[{"ipa":"\u026a\u02c8gri\u02d0\u02a4\u0259s","sound":{"audio":"egregi01"}}]},"fl":"adjective","gram":"more ~; most ~","def":[{"sseq":[[["sense",{"sls":["formal"],"dt":[["text","{bc}very bad and easily noticed "],["vis",[{"t":"The article contains a number of {it}egregious{\/it} [={it}glaring, obvious{\/it}] errors."},{"t":"an {it}egregious{\/it} example of political bias"},{"t":"{it}egregious{\/it} misconduct"}]]]}]]]}],"uros":[{"ure":"egre*gious*ly","fl":"adverb"},{"ure":"egre*gious*ness","fl":"noun","gram":"noncount"}],"shortdef":["very bad and easily noticed"]}]
     })
   })
+
+  // Cypress.Commands.add('makeBadRequest', () => {
+  //   cy.intercept('GET', 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/badRequest', {
+  //   statusCode: 500
+
+  //   })
+  // })
 
 //setDefinition(data[0].meta['app-shortdef'].def[0])
 
