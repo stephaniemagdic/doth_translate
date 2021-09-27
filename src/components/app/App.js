@@ -114,6 +114,9 @@ function App() {
         <Link to="/">
           <img src={shakespeareIcon} alt="Shakespeare icon" className="shakespeare"></img>
         </Link>
+        <div className='more-info'>
+          <p>Shakespearean Context Clues App: Grades 5-8</p>
+        </div>
       </nav>
     </div>
   );
