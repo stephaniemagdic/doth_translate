@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import './DashboardIndex.css';
 import {useEffect} from 'react';
-import {fetchAllTitles, fetchAllThemes} from '../../util.js'
+import {fetchAllTitles, fetchAllThemes} from '../../util.js';
+import './DashboardIndex.css';
 
 const DashboardIndex = () => {
   const setCategoriesInLocalStorage = () => {
@@ -21,17 +21,14 @@ const DashboardIndex = () => {
 
   return (
     <div className="DashboardIndex">
-      <nav>
-        {/* DropDown for language */}
-      </nav>
       <h1>Let's Get Started!</h1>
       <h2>I would like to choose a quote by...</h2>
       <div className='button-container'>
         <Link to='/category/theme'>
-        <button className="theme-btn">THEME</button>
+          <button className="theme-btn">THEME</button>
         </Link>
         <Link to='/category/title'>
-        <button className="title-btn">PLAY</button>
+          <button className="title-btn">PLAY</button>
         </Link>
       </div>
     </div>
