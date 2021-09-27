@@ -28,9 +28,9 @@ const Error = ({type}) => {
   } 
 
   return (
-    <div className='Erorr'>
-      <img src={backgroundImage} alt="Shakespeare book sitting up by its edges"></img>
-      {quote}
+    <div className='Error'>
+      {/* <img src={backgroundImage} alt="Shakespeare book sitting up by its edges"></img> */}
+      <p>{quote}</p>
     </div>
   )
 }
