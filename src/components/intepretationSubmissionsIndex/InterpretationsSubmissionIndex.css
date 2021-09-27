@@ -1,4 +1,17 @@
-.InterpretationSubmissionIndex{
+.InterpretationSubmissionIndex {
   display: flex;
   flex-direction: column;
+}
+
+.favorites {
+  display: flex;
+  flex-direction: column;
+}
+
+.interpretations {
+  margin: 20px;
+}
+
+.InterpretationSubmissionIndex button {
+  margin: 0 auto;
 }

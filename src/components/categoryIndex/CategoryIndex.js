@@ -6,7 +6,6 @@ import './CategoryIndex.css'
 import Error from '../error/Error'
 
 const CategoryIndex = ({category}) => {
-  console.log("match-->", category.match.params.type)
   const [allTitles, setAllTitles] = useState([])
   const [allThemes, setAllThemes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
