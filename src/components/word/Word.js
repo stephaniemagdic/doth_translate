@@ -6,19 +6,18 @@ import './Word.css'
 const Word = ({word, countDef}) => {
   // countDef()
   const [definition, setDefinition] = useState('')
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [hasDefinition, setHasDefinition] = useState(false)
-  
+  // const [isLoading, setIsLoading] = useState(true)
+  // const [error, setError] = useState(null)
+
   const getDefinition = async () => {
     try {
       const data = await fetchDefinition(word)
       setDefinition(data[0].meta['app-shortdef'].def[0])
-      setHasDefinition(true)
-      setIsLoading(false)
+      // setIsLoading(false)
     } catch (err) {
-      setError("Our Defintion Feature is Currently Unavailable")
-      setIsLoading(false)
+      //data cleaning function?
+      // console.log("error retrieving a definition for",)
+      // setIsLoading(false)
     }
   }
 
@@ -26,14 +25,14 @@ const Word = ({word, countDef}) => {
     if (word.length >= 5 ) {
       getDefinition();
     } else {
-      setIsLoading(false)
+      // setIsLoading(false)
     }
   }, [])
 
   return (
     <div className="Word" key={word}>
-      {error && <p>{error}</p>}
-      {isLoading && <p>Fetching your quote's context clues!</p>}
+      {/* {error && <p>{error}</p>} */}
+      {/* {isLoading && <p>Fetching your quote's context clues!</p>} */}
       {word.length >= 5 && definition && (
          <>
          <a data-tip data-for={word}> <span className="defined word">{word}</span></a>
