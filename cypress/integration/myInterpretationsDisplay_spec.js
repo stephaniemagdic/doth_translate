@@ -27,9 +27,16 @@ describe('My Interpretations Display User Flows', () => {
     cy.get('.pencil').click()
     cy.url().should('include', 'http://localhost:3000/edit')
     cy.get('input').should('have.value', 'HERE IS MY INTERPRETATION')
+  })
+
+  //will pass when funcitonality is written in.
+  it('A user be able to click the arrow icon to be taken back to interpret a selected saved quote', () => {
+    cy.addFavorite()
+    cy.visit('http://localhost:3000/my-interpretations')
+    cy.get('.arrow').click()
+    cy.url().should('include', 'http://localhost:3000/edit')
+    cy.get('words-container')
+    //.should have id ...   id: "266603a8-9d5d-11ea-965d-ac2b6ef23411",
   });
-  //A user should be able to click the interpret button to be taken back to interpret the quote of choice
-  //
-  //Add 404 error handling
 
 })
