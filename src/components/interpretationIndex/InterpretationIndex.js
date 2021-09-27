@@ -6,6 +6,7 @@
   import Error from '../error/Error'
 
   const InterpretationIndex = ({addInterpretation, addToFavorites, match, isEditing, editInterpretation}) => {
+    console.log("I am rerendering!")
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
     const [currentInterpretation, setCurrentInterpretation] = useState('')
@@ -60,8 +61,10 @@
         const param = urlParams[choiceIndex]
         fetchThemeQuote(param)
       }  }  
-    }, ([]))
+    }, [])
 
+    // to do: whenever state is changed, it refetches all the data again, so you can see it loading every time. Would this be a good time for use Callback??*
+    //https://dmitripavlutin.com/use-react-memo-wisely/
     const handleChange = (event) => {
       setCurrentInterpretation(event.target.value)
       if (event.target.value) {
@@ -102,7 +105,7 @@
           onChange={(event) => handleChange(event)}
         />
         <button onClick={() => addInterpretation(quote, currentInterpretation)}
-        className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
+        className="submit-btn" disabled={isDisabled}>SUBMIT INTERPRETATION</button>
         <Link to='/my-interpretations' >
           <button className='my-interpretations-btn' >
             GO TO MY INTERPRETATIONS
