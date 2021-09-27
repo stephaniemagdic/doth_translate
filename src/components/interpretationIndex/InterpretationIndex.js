@@ -4,7 +4,6 @@
   import './InterpretationIndex.css'
   import {Link} from 'react-router-dom';
   import Error from '../error/Error'
-import InterpretationSubmissionIndex from '../intepretationSubmissionsIndex/IntepretationSubmissionsIndex.js';
 
   const InterpretationIndex = ({addInterpretation, addToFavorites, match, isEditing, editInterpretation}) => {
     const [quote, setQuote] = useState('')
@@ -13,7 +12,6 @@ import InterpretationSubmissionIndex from '../intepretationSubmissionsIndex/Inte
     const [isDisabled, setIsDisabled] = useState(true);
     const [editedInterpretation, setEditedInterpretation] = useState("Type your interpretation here...")
     const [interpretationId, setInterpretationId] = useState(null)
-    
 
     const fetchThemeQuote = async (theme) => {
       try {
@@ -37,13 +35,10 @@ import InterpretationSubmissionIndex from '../intepretationSubmissionsIndex/Inte
       const retrievedItems = JSON.parse(localStorage.getItem('interpretations'))
       const paramIndex = window.location.href.split('/').indexOf('edit') + 1;
       const quoteId = window.location.href.split('/')[paramIndex]
-      console.log(quoteId)
-      console.log("retrievedItems", retrievedItems)
       const newList = retrievedItems.filter(quote => parseInt(quote.id) === parseInt(quoteId));
-      console.log(newList[0].quote)
-      // const storageItems = JSON.stringify([...newList]);
-      // localStorage.setItem('favorites', storageItems)
-      // setFavorites(newList)
+      if(!newList){
+        window.location.assign("/badpath");
+      }
       setQuote({quote:newList[0].quote})
       setEditedInterpretation(newList[0].interpretation)
       setInterpretationId(newList[0].id)
@@ -81,7 +76,6 @@ import InterpretationSubmissionIndex from '../intepretationSubmissionsIndex/Inte
     }
 
     return (
-
       <div className="InterpretationIndex">
         { !isEditing && (
           <>
@@ -116,44 +110,42 @@ import InterpretationSubmissionIndex from '../intepretationSubmissionsIndex/Inte
         </Link>
         </>
         )
-  }
+      }
 
-{ isEditing && (
-          <>
-        {error && <Error type={error}/>}
-        <div className="quote-container">
-          <nav>
-            <button>
-              GET A NEW QUOTE
+      { isEditing && (
+        <>
+          {error && <Error type={error}/>}
+          <div className="quote-container">
+            <nav>
+              <button>
+                GET A NEW QUOTE
+              </button>
+              <Link to="/">
+              <button>
+                CHOOSE A NEW CATEGORY
+              </button>
+              </Link>
+              <button>
+                CHOOSE A NEW TOPIC
+              </button>
+            </nav>
+            {quote && <Quote quote={quote} addToFavorites={addToFavorites}/>}
+          </div>
+          <input
+            type='text'
+            value={editedInterpretation}
+            onChange={(event) => handleEditChange(event)}
+          />
+          <button onClick={() => editInterpretation(quote, editedInterpretation, interpretationId)}
+          className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
+          <Link to='/my-interpretations' >
+            <button className='my-interpretations-btn' >
+              GO TO MY INTERPRETATIONS
             </button>
-            <Link to="/">
-            <button>
-              CHOOSE A NEW CATEGORY
-            </button>
-            </Link>
-            <button>
-              CHOOSE A NEW TOPIC
-            </button>
-          </nav>
-          {quote && <Quote quote={quote} addToFavorites={addToFavorites}/>}
-        </div>
-        <input
-          type='text'
-          value={editedInterpretation}
-          onChange={(event) => handleEditChange(event)}
-        />
-        <button onClick={() => editInterpretation(quote, editedInterpretation, interpretationId)}
-        className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
-        <Link to='/my-interpretations' >
-          <button className='my-interpretations-btn' >
-            GO TO MY INTERPRETATIONS
-          </button>
-        </Link>
+          </Link>
         </>
         )
-  }
-
-
+        }
       </div>
     )
   }
