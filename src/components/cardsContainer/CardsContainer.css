@@ -2,13 +2,29 @@
   display: flex;
   flex-wrap: wrap;
   margin: 20px;
+  color: black;
+}
+
+.submissions, .favorites div, p {
+  color: black;
 }
 
 .titles, .themes {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .title {
   margin-left: 30px;
+  font-size: 35px;
+  color: white;
+}
+
+.word {
+  color: white;
+}
+
+.CardsContainer h3 {
+  color: black;
 }
