@@ -1,4 +1,3 @@
-import backgroundImage from '../../assets/Page-not-found.png'
 import './Error.css'
 
 const Error = ({type}) => {
@@ -29,7 +28,6 @@ const Error = ({type}) => {
 
   return (
     <div className='Error'>
-      {/* <img src={backgroundImage} alt="Shakespeare book sitting up by its edges"></img> */}
       <p>{quote}</p>
     </div>
   )
