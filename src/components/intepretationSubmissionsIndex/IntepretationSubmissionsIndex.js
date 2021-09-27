@@ -1,11 +1,11 @@
 import CardsContainer from '../cardsContainer/CardsContainer';
 import './InterpretationsSubmissionIndex.css'
 
-const InterpretationSubmissionIndex = ({favorites, userSavedInterpretations, deleteQuoteFromStorage}) => {
+const InterpretationSubmissionIndex = ({favorites, savedInterpretations, deleteQuote}) => {
   return (
     <div className="InterpretationSubmissionIndex">
-      <CardsContainer cards={favorites} type='favorites' deleteQuoteFromStorage={deleteQuoteFromStorage} />
-      <CardsContainer cards={userSavedInterpretations} type='submissions'/>
+      <CardsContainer cards={favorites} type='favorites' deleteQuote={deleteQuote} />
+      <CardsContainer cards={savedInterpretations} type='submissions'/>
     </div>
   )
 }

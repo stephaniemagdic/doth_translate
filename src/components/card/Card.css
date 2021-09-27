@@ -1,9 +1,22 @@
-/* .favorites, .submissions {
+.submissions, favorites-container {
+  background: white;
+  padding: 6px;
+  margin: 6px;
+  border-radius: 6px;
+  border: none;
+}
 
-} */
+.favorites div, .submissions div {
+  background: white;
+  padding: 6px;
+  margin: 6px;
+  border-radius: 6px;
+  border: none;
+}
 
 .theme-options, .title-options {
   margin: 4px;
+	text-align: center;
 }
 
 .bin {
@@ -20,18 +33,20 @@
 
 .Card button {
   border: none;
+  font-size: 20px;
 }
 
-.favoites {
-  color: white;
-}
-
-.interpretation-container {
+.interpretations-container, favorites-container  {
   display: flex;
+  border: none;
 }
 
 .submissions {
   display: flex;
   flex-direction: column;
   margin: 20px;
+}
+
+.Card {
+  border: none;
 }

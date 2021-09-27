@@ -13,3 +13,7 @@ a {
   text-decoration: underline;
 }
 
+.definition {
+  display: inline;
+  margin-right: 4px;
+}

@@ -4,14 +4,12 @@
   import './InterpretationIndex.css'
   import {Link} from 'react-router-dom';
   import Error from '../error/Error'
+  import InterpretationInput from '../interpretationInput/InterpretationInput'
 
-  const InterpretationIndex = ({addInterpretation, addToFavorites, match, isEditing, editInterpretation}) => {
-    console.log("I am rerendering!")
+  const InterpretationIndex = ({addInterpretation, addQuote, isEditing, editInterpretation}) => {
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
-    const [currentInterpretation, setCurrentInterpretation] = useState('')
-    const [isDisabled, setIsDisabled] = useState(true);
-    const [editedInterpretation, setEditedInterpretation] = useState("Type your interpretation here...")
+    const [disableFavoriteButton, setDisableFavoriteButton] = useState(false)
     const [interpretationId, setInterpretationId] = useState(null)
 
     const fetchThemeQuote = async (theme) => {
@@ -41,51 +39,58 @@
         window.location.assign("/badpath");
       }
       setQuote({quote:newList[0].quote})
-      setEditedInterpretation(newList[0].interpretation)
       setInterpretationId(newList[0].id)
     }
 
-    useEffect(() => {
+    const fetchByParam = () => {
       if (isEditing) {
         findQuoteFromStorageById()
       }
       if (!isEditing) {
-      if ( window.location.href.includes('/category/title/')) {
-        const urlParams = window.location.href.split("/")
-        const choiceIndex = (window.location.href.split("/").indexOf('title')) + 1
-        const param = urlParams[choiceIndex]
-        fetchTitleQuote(param)     
-      } else if ( window.location.href.includes('/category/theme/') ) {
-        const urlParams = window.location.href.split("/")
-        const choiceIndex = (window.location.href.split("/").indexOf('theme')) + 1
-        const param = urlParams[choiceIndex]
-        fetchThemeQuote(param)
-      }  }  
+        if (window.location.href.includes('/category/title/')) {
+          const urlParams = window.location.href.split("/")
+          const choiceIndex = (window.location.href.split("/").indexOf('title')) + 1
+          const param = urlParams[choiceIndex]
+          fetchTitleQuote(param)   
+        } else if ( window.location.href.includes('/category/theme/') ) {
+          const urlParams = window.location.href.split("/")
+          const choiceIndex = (window.location.href.split("/").indexOf('theme')) + 1
+          const param = urlParams[choiceIndex]
+          fetchThemeQuote(param)
+        } 
+      } 
+    }
+
+
+    useEffect(() => {
+      fetchByParam() 
     }, [])
 
-    // to do: whenever state is changed, it refetches all the data again, so you can see it loading every time. Would this be a good time for use Callback??*
-    //https://dmitripavlutin.com/use-react-memo-wisely/
-    const handleChange = (event) => {
-      setCurrentInterpretation(event.target.value)
-      if (event.target.value) {
-        setIsDisabled(false)
-      }
+    const fetchANewQuote = () => {
+      fetchByParam();
+      setDisableFavoriteButton(true)
     }
-    const handleEditChange = (event) => {
-      setEditedInterpretation(event.target.value)
-      if (event.target.value) {
-        setIsDisabled(false)
-      }
+
+    const resetDisabledButton = () => {
+      setDisableFavoriteButton(false)
+    }
+ 
+    const handleSubmitInterpretation = (event, currentInterpretation) => {
+      addInterpretation(quote, currentInterpretation)
+    }
+ 
+    const handleSubmitEditInterpretation = (editedInterpretation) => {
+      editInterpretation(quote, editedInterpretation, interpretationId)
     }
 
     return (
       <div className="InterpretationIndex">
-        { !isEditing && (
+        {!isEditing && (
           <>
         {error && <Error type={error}/>}
         <div className="quote-container">
           <nav>
-            <button>
+            <button onClick={() => fetchANewQuote()}>
               GET A NEW QUOTE
             </button>
             <Link to="/">
@@ -93,24 +98,13 @@
               CHOOSE A NEW CATEGORY
             </button>
             </Link>
-            <button>
-              CHOOSE A NEW TOPIC
-            </button>
+            {/* <button>
+               A NEW TOPIC
+            </button> */}
           </nav>
-          {quote && <Quote quote={quote} addToFavorites={addToFavorites}/>}
+          {quote && <Quote quote={quote} addQuote={addQuote} type='new' disableFavoriteButton={disableFavoriteButton} resetDisabledButton={resetDisabledButton}/>}
         </div>
-        <input
-          type='text'
-          placeholder='Type your interpretation here...'
-          onChange={(event) => handleChange(event)}
-        />
-        <button onClick={() => addInterpretation(quote, currentInterpretation)}
-        className="submit-btn" disabled={isDisabled}>SUBMIT INTERPRETATION</button>
-        <Link to='/my-interpretations' >
-          <button className='my-interpretations-btn' >
-            GO TO MY INTERPRETATIONS
-          </button>
-        </Link>
+        <InterpretationInput  handleSubmitInterpretation={handleSubmitInterpretation} type='newInterpretation' />
         </>
         )
       }
@@ -120,37 +114,25 @@
           {error && <Error type={error}/>}
           <div className="quote-container">
             <nav>
-              <button>
-                GET A NEW QUOTE
-              </button>
               <Link to="/">
-              <button>
+              <span><button className='arrow-transition-button'>
                 CHOOSE A NEW CATEGORY
-              </button>
+              </button></span>
               </Link>
-              <button>
+              {/* <span><button className='arrow-transition-button'>
                 CHOOSE A NEW TOPIC
-              </button>
+              </button></span> */}
             </nav>
-            {quote && <Quote quote={quote} addToFavorites={addToFavorites}/>}
+            {quote && <Quote quote={quote} type='edit'/>}
           </div>
-          <input
-            type='text'
-            value={editedInterpretation}
-            onChange={(event) => handleEditChange(event)}
-          />
-          <button onClick={() => editInterpretation(quote, editedInterpretation, interpretationId)}
-          className="submit-btn" disabled={isDisabled}>Submit Intepretation</button>
-          <Link to='/my-interpretations' >
-            <button className='my-interpretations-btn' >
-              GO TO MY INTERPRETATIONS
-            </button>
-          </Link>
+          <InterpretationInput handleSubmitEditInterpretation={handleSubmitEditInterpretation} type='editInterpretation' />
         </>
         )
         }
-      </div>
+     
+    </div>
     )
+
   }
 
   export default InterpretationIndex;

@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react';
-import {fetchAllTitles, fetchAllThemes} from '../../util.js'
+import {fetchAllTitles, fetchAllThemes} from '../../util.js';
 import CardsContainer from '../cardsContainer/CardsContainer';
-import loadingClock from '../../assets/Loading.png'
-import './CategoryIndex.css'
-import Error from '../error/Error'
+import loadingClock from '../../assets/Loading.png';
+import Error from '../error/Error';
+import './CategoryIndex.css';
 
 const CategoryIndex = ({category}) => {
   const [allTitles, setAllTitles] = useState([])
@@ -40,7 +40,6 @@ const CategoryIndex = ({category}) => {
         fetchThemes()
         setIsLoading(false)
       }
-     
     } else if (fetchType === 'title') {
       if (localStorage.titles) {
         const retrievedTitles = JSON.parse(localStorage.getItem('titles'))
@@ -51,14 +50,14 @@ const CategoryIndex = ({category}) => {
         setIsLoading(false)
       }
     }
-  }, [])
+  }, [category.match.params.type])
 
   return (
     <div className="CategoryIndex">
-    {error && <Error type={error}/>}
-    {isLoading && <> <p>Loading...</p><img src={loadingClock} alt="old clock "></img></>}
-    {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
-    {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }
+      {error && <Error type={error}/>}
+      {isLoading && <> <p>Loading...</p><img src={loadingClock} alt="old clock "></img></>}
+      {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
+      {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }
     </div>
   )
 }

@@ -1,67 +1,77 @@
 import './App.css';
-import { Route, Switch, Link } from 'react-router-dom';
+import {
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom';
+import {
+  useState,
+  useEffect
+} from 'react';
 import InterpretationIndex from '../interpretationIndex/InterpretationIndex.js';
 import IntepretationsSubmisssionsIndex from '../intepretationSubmissionsIndex/IntepretationSubmissionsIndex';
-import { useState, useEffect } from 'react';
 import DashboardIndex from '../dashboardIndex/DashboardIndex'
-import CategoryIndex from '../categoryIndex/CategoryIndex'
+import CategoryIndex from '../categoryIndex/CategoryIndex';
 import shakespeareIcon from '../../assets/shakespeare.png';
-import Error from '../error/Error'
-
+import Error from '../error/Error';
 
 function App() {
-  const [userSavedInterpretations, setUserSavedInterpretations] = useState([])
+  const [savedInterpretations, setSavedInterpretations] = useState([])
   const [favorites, setFavorites] = useState([])
 
   const addInterpretation = (quote, newInterpretation) => {
-    //if empty string or undefined.
-    // if (!newInterpretation) {
-    //   return
-    // }
-    const interpretationObj = {quote: quote.quote, interpretation: newInterpretation, id: Date.now()}
-    setUserSavedInterpretations([...userSavedInterpretations,interpretationObj])
-    const storageInterpretations = JSON.stringify([...userSavedInterpretations, interpretationObj]);
+    const newInterpretationObj = {
+      quote: quote.quote,
+      interpretation: newInterpretation,
+      id: Date.now()
+    }
+    setSavedInterpretations([...savedInterpretations, newInterpretationObj])
+    const storageInterpretations = JSON.stringify([...savedInterpretations, newInterpretationObj]);
     localStorage.setItem('interpretations', storageInterpretations)
   }
 
-  const addToFavorites = (newFavorite, id) => {
-    //TO DO: fix this or disable button so can't click a second time.
-    if(favorites.includes(newFavorite)) {
+  const addQuote = (newFavorite, id) => {
+    if (favorites.includes(newFavorite)) {
       return
     }
-    const favoriteObj = {quote: newFavorite, id: id}
+    const favoriteObj = {
+      quote: newFavorite,
+      id: id
+    }
     setFavorites([...favorites, favoriteObj])
     const storageFavorites = JSON.stringify([...favorites, favoriteObj]);
     localStorage.setItem('favorites', storageFavorites)
   }
 
-  const deleteQuoteFromStorage = (id) => {
+  const deleteQuote = (id) => {
     const retrievedItems = JSON.parse(localStorage.getItem('favorites'))
-    console.log("id searching for ",id)
-    const newList = retrievedItems.filter(quote =>  quote.id !== id);
+    const newList = retrievedItems.filter(quote => quote.id !== id);
     const storageItems = JSON.stringify([...newList]);
     localStorage.setItem('favorites', storageItems)
     setFavorites(newList)
   }
-  
+
   const checkLocalStorage = () => {
-    if(localStorage.favorites) {
+    if (localStorage.favorites) {
       const retrievedFavorites = JSON.parse(localStorage.getItem('favorites'))
       setFavorites(retrievedFavorites)
     }
-    if(localStorage.interpretations) {
+    if (localStorage.interpretations) {
       const retrievedInterpretations = JSON.parse(localStorage.getItem('interpretations'))
-      setUserSavedInterpretations(retrievedInterpretations)
+      setSavedInterpretations(retrievedInterpretations)
     }
   }
 
   const editInterpretation = (quote, currentInterpretation, id) => {
-    //editInterpretation(quote, currentInterpretation, interpretationId)
-    const replacementInterpretationObj = {quote: quote.quote, interpretation: currentInterpretation, id: id}
-    const toSave = userSavedInterpretations.filter((interpretation) => {
+    const replacementInterpretationObj = {
+      quote: quote.quote,
+      interpretation: currentInterpretation,
+      id: id
+    }
+    const toSave = savedInterpretations.filter((interpretation) => {
       return interpretation.id !== id
     })
-    setUserSavedInterpretations([...toSave, replacementInterpretationObj])
+    setSavedInterpretations([...toSave, replacementInterpretationObj])
     const storageInterpretations = JSON.stringify([...toSave, replacementInterpretationObj]);
     localStorage.setItem('interpretations', storageInterpretations)
   }
@@ -70,48 +80,43 @@ function App() {
     () => {
       checkLocalStorage()
     }, [])
-
   return (
     <div className="App">
-       <h1 className="logo"> Doth Translate </h1>
+      <Link to='/'><h1 className="logo"> Doth Translate </h1></Link>
       <Switch>
-      <Route
-        exact path = "/"
-        render={(match) => <DashboardIndex />}
-      />
-      <Route
-      exact path= "/category/:type"
-      render={(match) => <CategoryIndex category={match}/>}
-      />
-      <Route
-      exact path= "/category/theme/:choice"
-      // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={false} />}
-      />
-      <Route
-      exact path= "/category/title/:choice"
-      // render={(match) =><InterpretationIndex choice={match.params.choice} displayType={"theme"} isEditing={false}/>}
-      render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={false}/>}
-      />
-
-      {/* <Route
-      exact path= "/category/title/:choice"
-      render={(match) =><InterpretationIndex choice={match.params.choice} displayType="theme" isEditing={false}/>}
-      /> */}
-      <Route
-      exact path= "/my-interpretations"
-      render={(match) =><IntepretationsSubmisssionsIndex favorites={favorites} userSavedInterpretations={userSavedInterpretations} deleteQuoteFromStorage={deleteQuoteFromStorage}/>}
-      />
-      <Route
-      exact path= "/edit/:id"
-      render={(match) =><InterpretationIndex addInterpretation={addInterpretation} addToFavorites={addToFavorites} match={match} isEditing={true} editInterpretation={editInterpretation}/>}
-      />
-      <Route render={() => <Error type='404'/>} />
+        <Route
+          exact path = "/"
+          render={() => <DashboardIndex />}
+        />
+        <Route
+          exact path= "/category/:type"
+          render={(match) => <CategoryIndex category={match}/>}
+        />
+        <Route
+          exact path= "/category/theme/:choice"
+          render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addQuote={addQuote} match={match} isEditing={false} />}
+        />
+        <Route
+          exact path= "/category/title/:choice"
+          render={(match) => <InterpretationIndex addInterpretation={addInterpretation} addQuote={addQuote} match={match} isEditing={false}/>}
+        />
+        <Route
+          exact path= "/my-interpretations"
+          render={() =><IntepretationsSubmisssionsIndex favorites={favorites} savedInterpretations={savedInterpretations} deleteQuote={deleteQuote}/>}
+        />
+        <Route
+          exact path= "/edit/:id"
+          render={(match) =><InterpretationIndex addInterpretation={addInterpretation} addQuote={addQuote} match={match} isEditing={true} editInterpretation={editInterpretation}/>}
+        />
+        <Route render={() => <Error type='404'/>} />
       </Switch>
       <nav className='back-to-main'> 
         <Link to="/">
           <img src={shakespeareIcon} alt="Shakespeare icon" className="shakespeare"></img>
         </Link>
+        <div className='more-info'>
+          <p>Shakespearean Context Clues App: Grades 5-8</p>
+        </div>
       </nav>
     </div>
   );
