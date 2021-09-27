@@ -1,16 +1,55 @@
 input {
-  height: 60vh;
-  width: 100vw;
+  height: 50vh;
+  width: 96vw;
   font: 2em/.25em Arial, Helvetica, sans-serif;
   padding-left:0;
+  border-radius: 6px;
+  margin: 6px;
 }
 
 .quoteContainer {
   height: 40vh;
 }
 
-
 .InterpretationIndex {
-  height: 100vh
+  height: 85vh;
+  margin: 6px;
 }
 
+.buttonContainer {
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrow-transition-button, .my-interpretations-btn {
+    transition: all 0.5s;
+    cursor: pointer;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+}
+
+.arrow-transition-button, .my-interpretations-btn:after {
+  content: '»';
+  position: absolute;
+  opacity: 0;  
+  top: 4px;
+  right: -20px;
+  transition: 0.5s;
+}
+
+arrow-transition-button, .my-interpretations-btn:hover{
+  padding-right: 24px;
+  padding-left:8px;
+}
+
+arrow-transition-button, .my-interpretations-btn:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+
+.my-interpretations-btn {
+  margin-right: 20px;
+}

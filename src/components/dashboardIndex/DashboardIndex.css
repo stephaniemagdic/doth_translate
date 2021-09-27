@@ -9,6 +9,7 @@
 h1, h2, button {
   font-family: 'Andika New Basic', sans-serif;
   font-weight: bold;
+  font: white
 }
 
 .button-container {
@@ -21,11 +22,6 @@ h1, h2, button {
 
 .margin-btn {
   margin-left: 4px;
-}
-
-.logo {
-  /* display: flex;
-  align-items: flex-start */
 }
 
 button {

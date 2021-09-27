@@ -3,6 +3,7 @@
   padding: 6px;
   margin: 6px;
   border-radius: 6px;
+  border: none;
 }
 
 .favorites div, .submissions div {
@@ -10,6 +11,7 @@
   padding: 6px;
   margin: 6px;
   border-radius: 6px;
+  border: none;
 }
 
 .theme-options, .title-options {
@@ -36,10 +38,15 @@
 
 .interpretations-container, favorites-container  {
   display: flex;
+  border: none;
 }
 
 .submissions {
   display: flex;
   flex-direction: column;
   margin: 20px;
+}
+
+.Card {
+  border: none;
 }

@@ -1,10 +1,8 @@
 .shakespeare {
   height: 5%;
   width: 5%;
-}
-
-.back-to-main {
-  margin: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 button:active {
@@ -33,7 +31,7 @@ button {
 .logo {
   display: flex;
   justify-content: flex-end;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 
 .App a {
@@ -44,3 +42,9 @@ button:disabled {
   cursor:not-allowed
 }
 
+.more-info {
+  display: flex;
+  margin-left: 65%;
+  font-size: 15px;
+  font-style: italic
+}
