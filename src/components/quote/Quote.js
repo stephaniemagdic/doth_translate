@@ -5,6 +5,7 @@ import {useState, useEffect} from 'react';
 import uuid from 'react-uuid';
 
 const Quote = ({quote, addToFavorites, quoteID}) => {
+  console.log('quoteID', quoteID)
   const [isDisabled, toggleIsDisabled] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [count, setCount] = useState(0)
@@ -13,18 +14,16 @@ const Quote = ({quote, addToFavorites, quoteID}) => {
     // setCount(count + 1)
   }
 
+  const id = uuid();
   const words = quote.quote.split(" ").map(word => <Word word={word} countDef={countDefinitionsFetched} id={word} key={uuid()}/> )
 
   const handleClick = () => {
-    addToFavorites(quote.quote, quoteID)
+    addToFavorites(quote.quote, id)
     toggleIsDisabled(true)
   }
-
- 
-
  
   return (
-    <div className="Quote" id={quoteID} key={quoteID}>
+    <div className="Quote" id={id} key={id}>
       <div className="words-container">
       {words}
       </div>
