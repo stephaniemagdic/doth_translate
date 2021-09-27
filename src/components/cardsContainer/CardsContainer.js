@@ -1,6 +1,7 @@
 import Card from '../card/Card';
 import {Link} from 'react-router-dom';
 import './CardsContainer.css';
+import uuid from 'react-uuid';
 
 const CardsContainer = ({cards, type, deleteQuoteFromStorage}) => {
    let cardComponents;
@@ -21,7 +22,7 @@ const CardsContainer = ({cards, type, deleteQuoteFromStorage}) => {
          </div>
       )
    } else if (type === 'submissions' || type === 'favorites') {
-      cardComponents = cards.map(card => <Card cardData={card} type={type} deleteQuoteFromStorage={deleteQuoteFromStorage}/>)
+      cardComponents = cards.map(card => <Card cardData={card} type={type} deleteQuoteFromStorage={deleteQuoteFromStorage} key={uuid()}/>)
    }
 
     return (
