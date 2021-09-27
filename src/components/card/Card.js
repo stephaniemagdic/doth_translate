@@ -14,7 +14,7 @@ const Card = ({cardData, type, deleteQuoteFromStorage}) => {
   if (type === 'favorites') {
     componentToRender = (
       <div className="favorites" id={cardData.id} key={cardData.id}>
-        {cardData.quote}
+        <p>{cardData.quote}</p>
       <button onClick={() => handleDeleteQuote(cardData.id)}><img src={bin} alt='trash bin' className="bin"></img></button>
       <button><img src={arrow} alt="right arrow" className="arrow"></img></button>
       </div>
@@ -23,9 +23,11 @@ const Card = ({cardData, type, deleteQuoteFromStorage}) => {
   } else if (type === 'submissions' ) {
     componentToRender = ( 
       <div className="submissions" >
-        <h3>Quote:</h3> <p> {cardData.quote} </p>
-        <h3>Your Interpretation:</h3> <p> {cardData.interpretation} </p>
-        <button><Link to={`edit/${cardData.id}`}><img src={pencil} alt='pencil' className="pencil"></img></Link></button>
+        <div><h3>Quote:</h3><p> {cardData.quote} </p></div>
+        <div>
+          <h3 className='interpretation-container'>Your Interpretation:</h3><p> {cardData.interpretation} </p>
+          <div><button><Link to={`edit/${cardData.id}`}><img src={pencil} alt='pencil' className="pencil"></img></Link></button></div>
+        </div>
       </div> 
     )
   } else if (type === 'theme-options') {
