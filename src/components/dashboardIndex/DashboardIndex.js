@@ -4,7 +4,6 @@ import {useEffect} from 'react';
 import {fetchAllTitles, fetchAllThemes} from '../../util.js'
 
 const DashboardIndex = () => {
-
   const setCategoriesInLocalStorage = () => {
     fetchAllTitles().then((data) => {
       const titleOptions = JSON.stringify(data.quote);
@@ -23,7 +22,6 @@ const DashboardIndex = () => {
   return (
     <div className="DashboardIndex">
       <nav>
-        <h1 className="logo"> Doth Translate </h1>
         {/* DropDown for language */}
       </nav>
       <h1>Let's Get Started!</h1>
