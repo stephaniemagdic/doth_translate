@@ -37,7 +37,8 @@ function App() {
 
   const deleteQuoteFromStorage = (id) => {
     const retrievedItems = JSON.parse(localStorage.getItem('favorites'))
-    const newList = retrievedItems.filter(quote => quote.id !== id);
+    console.log("id searching for ",id)
+    const newList = retrievedItems.filter(quote =>  quote.id !== id);
     const storageItems = JSON.stringify([...newList]);
     localStorage.setItem('favorites', storageItems)
     setFavorites(newList)
@@ -60,9 +61,6 @@ function App() {
     const toSave = userSavedInterpretations.filter((interpretation) => {
       return interpretation.id !== id
     })
-    console.log("here are the replacements", [...toSave, replacementInterpretationObj])
-
-
     setUserSavedInterpretations([...toSave, replacementInterpretationObj])
     const storageInterpretations = JSON.stringify([...toSave, replacementInterpretationObj]);
     localStorage.setItem('interpretations', storageInterpretations)
@@ -75,6 +73,7 @@ function App() {
 
   return (
     <div className="App">
+       <h1 className="logo"> Doth Translate </h1>
       <Switch>
       <Route
         exact path = "/"
