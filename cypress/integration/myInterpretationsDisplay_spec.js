@@ -39,4 +39,6 @@ describe('My Interpretations Display User Flows', () => {
     //.should have id ...   id: "266603a8-9d5d-11ea-965d-ac2b6ef23411",
   });
 
+  //Test for delete a saved quote.
+
 })
