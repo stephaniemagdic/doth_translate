@@ -29,15 +29,15 @@ const CardsContainer = ({cards, type, deleteQuoteFromStorage}) => {
       <>
       { type === 'submissions' && (
          <div className="interpretations">
-            <h2>My Interpretations</h2>
+            <h2 className='title'>My Interpretations</h2>
             {cardComponents}
             {!cardComponents.length && <button><Link to="/">Go back to start interpreting</Link></button>}
          </div>
          )}   
       { type === 'favorites' && (
          <div className="favorites">
-            <h2>Saved Quotes</h2>
-            {cardComponents}
+            <h2 className='title'>Saved Quotes</h2>
+            <div>{cardComponents}</div> 
             {!cardComponents.length && <button><Link to="/">Find a favorite Quote</Link></button>}
          </div>
          )}
