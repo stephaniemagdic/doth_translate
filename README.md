@@ -2,6 +2,8 @@
 ## [Deployed Site](https://stephaniemagdic.github.io/doth_translate/)
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
+<a href="https://ibb.co/723H1sn"><img src="https://i.ibb.co/723H1sn/Shakespeare.png" alt="Shakespeare" border="0"></a>
+
 ## Table Of Contents
 + [Setup instructions](#setup-instructions)
 + [Overview](#overview)
