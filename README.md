@@ -50,6 +50,15 @@
 
 [MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
 
+## Examples
+
+<a href="https://ibb.co/rsDszmK"><img src="https://i.ibb.co/NScSJsg/Screen-Shot-2021-09-28-at-6-27-00-AM.png" alt="Screen-Shot-2021-09-28-at-6-27-00-AM" border="0"></a>
+<a href="https://ibb.co/7yFP6Qz"><img src="https://i.ibb.co/Lpfm2rP/Screen-Shot-2021-09-28-at-6-31-54-AM.png" alt="Screen-Shot-2021-09-28-at-6-31-54-AM" border="0"></a>
+<a href="https://ibb.co/ZzfDVz8"><img src="https://i.ibb.co/PGrHNGh/Screen-Shot-2021-09-28-at-6-32-09-AM.png" alt="Screen-Shot-2021-09-28-at-6-32-09-AM" border="0"></a>
+<a href="https://ibb.co/GHXQBGg"><img src="https://i.ibb.co/FH94NcG/Screen-Shot-2021-02-25-at-7-52-16-PM.png" alt="Screen-Shot-2021-02-25-at-7-52-16-PM" border="0"></a>
+<a href="https://ibb.co/wB2Jjm8"><img src="https://i.ibb.co/ydxh7jK/Screen-Shot-2021-09-27-at-7-08-04-PM.png" alt="Screen-Shot-2021-09-27-at-7-08-04-PM" border="0"></a>
+<a href="https://ibb.co/Dt0xYnL"><img src="https://i.ibb.co/pxYtQpn/Screen-Shot-2021-09-27-at-9-07-39-PM.png" alt="Screen-Shot-2021-09-27-at-9-07-39-PM" border="0"></a>
+
 ## Learning Goals
 + This application is built using functional react. The UseEffect hook is used for asynchronous javascript, fetching from our quote and dictionary API on rendering of applicable components.
 + Router is utilzed to allow a user to navigate back and forth to between paths, and uses id's for stored interpretations, which are grabbed at the route on page load from local storage to allow access to that interpretation when rendering a new component. 
