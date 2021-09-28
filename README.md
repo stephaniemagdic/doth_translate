@@ -20,7 +20,7 @@
   + Type ```npm start``` into to the command line to start the React app. A browser window will appear running a local host url
 
 ## Overview
-+ Doth Translate is an application inspired by my previous middle school students and my favorite unit- Shakespeare! Elizabethan English is not easy to interpret, but it sure is fun to try! With the help of Doth Translate, a teacher can get students excited about diving into a working with Shakespearean texts by introducing them to popular Shakespearean quotes. With this simple application, students can work independently or together to generate quotes by theme or by Shakespearean play and use the context clues to work on an interpretation. Students can save their interpretations before they move to their next quote of choice, so that when teachers come around to check understanding, old interpretations will be viewable. 
++ Doth Translate is an application inspired by my previous middle school students and my favorite unit- Shakespeare! Elizabethan English is not easy to interpret, but it sure is fun to try! With the help of Doth Translate, a teacher can get students excited about diving into a working with Shakespearean texts by introducing them to popular Shakespearean quotes. With this simple application, students can work independently, pairs, or in groups to generate quotes by theme or by Shakespearean play and use the context clues provided on hover to work on an creating their own interpretation. Students can save their interpretations before they move to their next quote of choice, so that when teachers come around to check understanding, saved interpretations will be viewable. 
 + Doth Translate allows a user to:
   - Choose a quote category.
   - Browse and choose quotes further broken down by play title or theme.
@@ -32,7 +32,13 @@
   - Delete quotes that are clogging up your favorites.
   Coming Soon:
   - Go back and edit your saved quotes. (Full functionality coming soon...)
-
+  
+  ### Bell-Ringer Ideas:
+  - Give each student poster paper. Have them copy the quote from the application and define the words underlined in the sentence. Have students draw connections between the definitions and words in the sentence and use a concept web to interpret specific phrases in the sentence.
+  - Have a laptop set up at each desk. Generate a quote at each station. Play musical chairs ([preferably to fit the times](https://www.youtube.com/watch?v=T6QnThPGqIQ)). Have students rotate around the room in partners to visit each station and take note of their translation, making sure to save the quote before moving to the next station. The next group should revisit the same quote to edit the interpretation - not changing but adding to the original quote.
+  - Couple with teacher pay teacher ideas to enhance a lesson: [TPT Shakesperean Language Lesson Plans](https://www.teacherspayteachers.com/Browse/Search:shakespearean%20language/Price-Range/Free) 
+  - Use the application as a simple warm up or as practice when students finish an assignment early and are looking for something to do.
+  - Use this application solely for a lesson on context clues! [TPT Context Clues Lesson Plans](https://www.teacherspayteachers.com/Browse/Search:context%20clues/Price-Range/Free/Grade-Level/Sixth)
 
 ## Planning Docs
 
@@ -42,7 +48,7 @@
 
 [Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing)
 
-![MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
+[MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
 
 ## Learning Goals
 + This application is built using functional react. The UseEffect hook is used for asynchronous javascript, fetching from our quote and dictionary API on rendering of applicable components.
@@ -62,12 +68,18 @@
 
 ## Future Features
 + A user will be able to interpret a saved quote.
-+ I plan to add PropTypes and a data cleaning function.
++ I plan to add PropTypes and a data cleaning function: I would like to filter thorugh my definition data and if a defintion is not found for a word, I would like to instead return null so that my component can read that prop. I would also like to provide multiple defintions per word if that word has more than one meaning.
++ I would like to further break down my components to handle a single responsibility. As functionality was added in a short amount of time, some components are larger than I would like.
++ I would like to test my non-MVP user flows. 
++ I would like to make this responsive to an ipad as well since many schools use ipads as opposed to laptops especially in grade 5.
 
 ### Wins and Challenges
 + Wins:
-  - I was able to add a lot more functionality in a week than I had originally thought possible.
+  - I was able to complete a lot more functionality in a week than I had originally thought possible.
+  - I was able to conceptualize, plan, wireframe and test, and build the application in under 7 days, while building other applications requiring for the final assessment.
+  - I was able to hit two API endpoints to provide quotes and context clues to make this application more student user friendly.
   - I was able to use a new npm package, react tooltip that allowed for a user friendly way to see context clues to help with interpretations.
 + Challenges:
   - The dictionary API I was originally using ran into an authentication error midway through the project. I had to find another API, subscribe and update my logic in my fetch requests.
-  - Github has its own 404 page which seems to be interfering with my route set up intitally, so my error page does't show up. I ended up creating a workaround file on the gh pages branch to mimic my own set up, but will be looking into this further. 
+  - Github has its own 404 page which seems to be interfering with my route set up intitally, so the error page I created does't show up on Github Pages. I ended up creating a workaround file on the gh pages branch to mimic my own set up, but will be looking into this further. I would like to deploy this application with another deployment tool.
+
