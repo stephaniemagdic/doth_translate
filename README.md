@@ -3,22 +3,21 @@
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Table Of Contents
-+ [Overview](#overview)
-+ [Examples](#examples)
 + [Setup instructions](#setup-instructions)
++ [Overview](#overview)
++ [Planning Docs](#Planning-Docs)
++ [Examples](#examples)
 + [Learning Goals](#learning-goals)
 + [Technologies used](#technologies-used)
 + [Contributors](#contributors)
 + [Future features](#future-features)
 + [Reflections & Wins](#reflections-and-wins)
 
-[Wireframes](https://miro.com/app/board/o9J_lvMEdaw=/)
-
-[Persona-Student](https://docs.google.com/document/d/1UV5LH0c0km30bF26SDYU46BcUKD0wEqw1vzdnCZob7c/edit)
-
-[Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing)
-
-![MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
+## Set-up Instructions
+  + Fork this repo by clicking the ```Fork``` button in the upper right of this page
+  + Clone your new repo down to your local machine in your chosen directory
+  + Type ```npm install``` into the command line to install all dependencies
+  + Type ```npm start``` into to the command line to start the React app. A browser window will appear running a local host url
 
 ## Overview
 + Doth Translate is an application inspired by my previous middle school students and my favorite unit- Shakespeare! Elizabethan English is not easy to interpret, but it sure is fun to try! With the help of Doth Translate, a teacher can get students excited about diving into a working with Shakespearean texts by introducing them to popular Shakespearean quotes. With this simple application, students can work independently or together to generate quotes by theme or by Shakespearean play and use the context clues to work on an interpretation. Students can save their interpretations before they move to their next quote of choice, so that when teachers come around to check understanding, old interpretations will be viewable. 
@@ -34,11 +33,16 @@
   Coming Soon:
   - Go back and edit your saved quotes. (Full functionality coming soon...)
 
-## Set-up Instructions
-  + Fork this repo by clicking the ```Fork``` button in the upper right of this page
-  + Clone your new repo down to your local machine in your chosen directory
-  + Type ```npm install``` into the command line to install all dependencies
-  + Type ```npm start``` into to the command line to start the React app. A browser window will appear running a local host url
+
+## Planning Docs
+
+[Wireframes](https://miro.com/app/board/o9J_lvMEdaw=/)
+
+[Persona-Student](https://docs.google.com/document/d/1UV5LH0c0km30bF26SDYU46BcUKD0wEqw1vzdnCZob7c/edit)
+
+[Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing)
+
+![MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
 
 ## Learning Goals
 + This application is built using functional react. The UseEffect hook is used for asynchronous javascript, fetching from our quote and dictionary API on rendering of applicable components.
