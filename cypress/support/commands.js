@@ -40,7 +40,7 @@ Cypress.Commands.add('addInterpretation', () => {
 })
 
 Cypress.Commands.add('addFavorite', () => {
-  cy.fetchRandomQuote()
+  cy.fetchQuoteByTheme()
   cy.visit('http://localhost:3000/category/theme/love')
   cy.get('.favorite-btn').click()
 })
@@ -53,12 +53,4 @@ Cypress.Commands.add('getDefinition', () => {
     })
   })
 
-  // Cypress.Commands.add('makeBadRequest', () => {
-  //   cy.intercept('GET', 'https://shakespeare-quotes-generator.herokuapp.com/api/v1/badRequest', {
-  //   statusCode: 500
-
-  //   })
-  // })
-
-//setDefinition(data[0].meta['app-shortdef'].def[0])
 

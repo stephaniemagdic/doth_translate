@@ -93,14 +93,11 @@
             <button onClick={() => fetchANewQuote()}>
               GET A NEW QUOTE
             </button>
-            <Link to="/">
+            <Link to="/doth_translate/">
             <button>
               CHOOSE A NEW CATEGORY
             </button>
             </Link>
-            {/* <button>
-               A NEW TOPIC
-            </button> */}
           </nav>
           {quote && <Quote quote={quote} addQuote={addQuote} type='new' disableFavoriteButton={disableFavoriteButton} resetDisabledButton={resetDisabledButton}/>}
         </div>
@@ -114,14 +111,11 @@
           {error && <Error type={error}/>}
           <div className="quote-container">
             <nav>
-              <Link to="/">
+              <Link to="/doth_translate/">
               <span><button className='arrow-transition-button'>
                 CHOOSE A NEW CATEGORY
               </button></span>
               </Link>
-              {/* <span><button className='arrow-transition-button'>
-                CHOOSE A NEW TOPIC
-              </button></span> */}
             </nav>
             {quote && <Quote quote={quote} type='edit'/>}
           </div>

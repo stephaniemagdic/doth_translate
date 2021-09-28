@@ -1,13 +1,4 @@
 describe('Interpretation Display User Flows', () => {
-  // it('A user should see a quote randomly generated on page load', () => {
-  //   cy.fetchRandomQuote()
-  //   cy.visit('http://localhost:3000/category/theme/love')
-  //   cy.get('.Quote')
-  //   cy.contains('But lest myself be guilty to self wrong, i\'ll stop mine ears against the mermaid\'s song')
-  // });
-
-  // tests for what is seen on inital page load.
-
   it('A user should see definitions available for words over 5 letters in length if the API has a definition avaialable', () => {
     cy.getDefinition()
     cy.fetchQuoteByTitle()
@@ -52,15 +43,11 @@ describe('Interpretation Display User Flows', () => {
     cy.get('.Word').should('have.length', 70)
   });
 
-  //TO DO: FIX THIS TEST.
   it('A user should be able to click the save button to save a quote', () => {
     cy.fetchQuoteByTitle()
     cy.visit('http://localhost:3000/category/title/othello')
-    // cy.get('[id=test]')
     cy.get('.favorite-btn').click()
     cy.visit('http://localhost:3000/my-interpretations')
-    //TO DO: FIX ASSERTION
-    // cy.get('[id=test]')
     cy.contains(`Which thing to do, if this poor trash of Venice, whom trace for his quick hunting, stand the putting on, i'll have our Michael Cassio on the hip, abuse him to the Moor in the rank garb (For fear Cassio with my nightcap too), make the Moor thank me, love me, and reward me for making him egregiously an ass and practicing upon his peace and quiet even to madness.`)
   });
 
@@ -70,9 +57,18 @@ describe('Interpretation Display User Flows', () => {
     cy.should('have.value', 'HERE IS MY INTERPRETATION')
   });
 
-
   it('A user should be able to click on submit interpretation to save their interpetation', () => {
     cy.visit('http://localhost:3000/category/theme/love')
+    cy.get('input').type('HERE IS MY INTERPRETATION')
+    cy.should('have.value', 'HERE IS MY INTERPRETATION')
+    cy.get('.submit-btn').click()
+    cy.visit('http://localhost:3000/my-interpretations')
+    cy.get('.interpretations').should('contain', 'HERE IS MY INTERPRETATION') 
+  });
+
+  it('A user should not be able to save an interpretation if they have not yet typed anything in the input field', () => {
+    cy.visit('http://localhost:3000/category/theme/love')
+    cy.get('.submit-btn').should('be.disabled')
     cy.get('input').type('HERE IS MY INTERPRETATION')
     cy.should('have.value', 'HERE IS MY INTERPRETATION')
     cy.get('.submit-btn').click()
@@ -91,9 +87,8 @@ describe('Interpretation Display User Flows', () => {
     cy.get('.shakespeare').click()
     cy.url().should('not.include', 'category/theme/love')
   });
-
-  //LATER FUNCTIONALITY STILL NEED TO TEST:
-    //a user should be able to click a button to see a randomly generated quote.
-    //choose a new topic button
-
+  it('A user should see a 404 error page when an undefined path is visited', () => {
+    cy.visit('http://localhost:3000/undefinedpath')
+    cy.contains('Page Not Found')
+  });
 })

@@ -82,10 +82,10 @@ function App() {
     }, [])
   return (
     <div className="App">
-      <Link to='/'><h1 className="logo"> Doth Translate </h1></Link>
+      <Link to="/doth_translate/"><h1 className="logo"> Doth Translate </h1></Link>
       <Switch>
         <Route
-          exact path = "/"
+          exact path = "/doth_translate/"
           render={() => <DashboardIndex />}
         />
         <Route
@@ -111,7 +111,7 @@ function App() {
         <Route render={() => <Error type='404'/>} />
       </Switch>
       <nav className='back-to-main'> 
-        <Link to="/">
+        <Link to="/doth_translate/">
           <img src={shakespeareIcon} alt="Shakespeare icon" className="shakespeare"></img>
         </Link>
         <div className='more-info'>
