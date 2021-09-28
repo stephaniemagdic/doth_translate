@@ -31,7 +31,7 @@ const CategoryIndex = ({category}) => {
 
   useEffect(() => {
     const fetchType = category.match.params.type
-    if(fetchType === 'theme' ) {
+    if (fetchType === 'theme' ) {
       if (localStorage.themes) {
         const retrievedThemes = JSON.parse(localStorage.getItem('themes'))
         setAllThemes(retrievedThemes)
