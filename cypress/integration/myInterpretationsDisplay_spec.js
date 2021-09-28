@@ -1,5 +1,4 @@
 describe('My Interpretations Display User Flows', () => {
-  //what is seen on page load.
   it('A user should see interpretation submissions when visiting the page', () => {
     cy.addInterpretation()
     cy.visit('http://localhost:3000/my-interpretations')
@@ -11,7 +10,7 @@ describe('My Interpretations Display User Flows', () => {
     cy.addFavorite()
     cy.visit('http://localhost:3000/my-interpretations')
     cy.get('.favorites')
-    cy.contains('But lest myself be guilty to self wrong, i\'ll stop mine ears against the mermaid\'s song.')
+    cy.contains('Do protest never loved myself till now infixed beheld myself drawn in the flattering table of her eye.')
   });
 
   it('A user should be able to click the Shakespeare button to be navigated back to the main page', () => {
@@ -20,7 +19,6 @@ describe('My Interpretations Display User Flows', () => {
     cy.url().should('not.include', 'http://localhost:3000/my-interpretations')
   });
 
-  //TESTS TO WRITE AFTER FUNCTIONALITY IS BUILT
   it('A user be able to click the pencil icon to be taken back to edit the selected interpretation', () => {
     cy.addInterpretation()
     cy.visit('http://localhost:3000/my-interpretations')
@@ -29,16 +27,20 @@ describe('My Interpretations Display User Flows', () => {
     cy.get('input').should('have.value', 'HERE IS MY INTERPRETATION')
   })
 
-  //will pass when funcitonality is written in.
-  it('A user be able to click the arrow icon to be taken back to interpret a selected saved quote', () => {
+  it('A user be able to click the trash bin to delete a quote', () => {
     cy.addFavorite()
     cy.visit('http://localhost:3000/my-interpretations')
-    cy.get('.arrow').click()
-    cy.url().should('include', 'http://localhost:3000/edit')
-    cy.get('words-container')
-    //.should have id ...   id: "266603a8-9d5d-11ea-965d-ac2b6ef23411",
+    cy.get('.Card').contains('Do protest never loved myself till now infixed beheld myself drawn in the flattering table of her eye')
+    cy.get('.bin').click()
+    cy.get('.favorites').should('not.contain', 'Do protest never loved myself till now infixed beheld myself drawn in the flattering table of her eye')
+  
+  })
+  it('A user should see a 404 error page when an undefined path is visited', () => {
+    cy.visit('http://localhost:3000/undefinedpath')
+    cy.contains('Page Not Found')
   });
-
-  //Test for delete a saved quote.
-
 })
+
+
+
+
