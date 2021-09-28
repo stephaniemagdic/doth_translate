@@ -16,6 +16,8 @@ LINK TO wireframes
 LINK to project planning board
 User Personas
 
+<a href="https://ibb.co/wB2Jjm8"><img src="https://i.ibb.co/ydxh7jK/Screen-Shot-2021-09-27-at-7-08-04-PM.png" alt="Screen-Shot-2021-09-27-at-7-08-04-PM" border="0"></a>
+
 ## Overview
 + Doth Translate is an application inspired by my previous middle school students and my favorite unit- Shakespeare! Elizabethan English is not easy to interpret, but it sure is fun to try! With the help of Doth Translate, a teacher can get students excited about diving into a working with Shakespearean texts by introducing them to popular Shakespearean quotes. With this simple application, students can work independently or together to generate quotes by theme or by Shakespearean play and use the context clues to work on an interpretation. Students can save their interpretations before they move to their next quote of choice, so that when teachers come around to check understanding, old interpretations will be viewable. 
 + Doth Translate allows a user to:
