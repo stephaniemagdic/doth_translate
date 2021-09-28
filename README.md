@@ -1,4 +1,4 @@
-# Doth Translate
+# [Doth Translate](https://stephaniemagdic.github.io/doth_translate/)
 ## [Deployed Site](https://stephaniemagdic.github.io/doth_translate/)
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
@@ -51,7 +51,6 @@
 [MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
 
 ## Examples
-<a href="https://ibb.co/DkkKnGs"><img src="https://i.ibb.co/DkkKnGs/Screen-Shot-2021-09-28-at-6-37-43-AM.png" alt="Screen-Shot-2021-09-28-at-6-37-43-AM" border="0"></a>
 <a href="https://ibb.co/DkkKnGs"><img src="https://i.ibb.co/922Yjwz/Screen-Shot-2021-09-28-at-6-37-43-AM.png" alt="Screen-Shot-2021-09-28-at-6-37-43-AM" border="0"></a>
 <a href="https://ibb.co/rsDszmK"><img src="https://i.ibb.co/NScSJsg/Screen-Shot-2021-09-28-at-6-27-00-AM.png" alt="Screen-Shot-2021-09-28-at-6-27-00-AM" border="0"></a>
 <a href="https://ibb.co/7yFP6Qz"><img src="https://i.ibb.co/Lpfm2rP/Screen-Shot-2021-09-28-at-6-31-54-AM.png" alt="Screen-Shot-2021-09-28-at-6-31-54-AM" border="0"></a>
