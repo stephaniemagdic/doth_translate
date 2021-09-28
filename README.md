@@ -1,5 +1,5 @@
 # Doth Translate
-#### [Link to Deployed Site](https://stephaniemagdic.github.io/doth_translate/)
+## [Deployed Site](https://stephaniemagdic.github.io/doth_translate/)
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Table Of Contents
@@ -12,9 +12,10 @@
 + [Future features](#future-features)
 + [Reflections & Wins](#reflections-and-wins)
 
-LINK TO wireframes
-LINK to project planning board
-User Personas
+[Wireframes](https://miro.com/app/board/o9J_lvMEdaw=/)
+[Persona-Student]((https://docs.google.com/document/d/1UV5LH0c0km30bF26SDYU46BcUKD0wEqw1vzdnCZob7c/edit)
+[Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing))
+
 
 <a href="https://ibb.co/wB2Jjm8"><img src="https://i.ibb.co/ydxh7jK/Screen-Shot-2021-09-27-at-7-08-04-PM.png" alt="Screen-Shot-2021-09-27-at-7-08-04-PM" border="0"></a>
 
