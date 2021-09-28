@@ -108,7 +108,7 @@ function App() {
           exact path= "/edit/:id"
           render={(match) =><InterpretationIndex addInterpretation={addInterpretation} addQuote={addQuote} match={match} isEditing={true} editInterpretation={editInterpretation}/>}
         />
-        <Route render={() => <Error type='404'/>} />
+        <Route path='*' render={() => <Error type='404'/>} />
       </Switch>
       <nav className='back-to-main'> 
         <Link to="/doth_translate/">
