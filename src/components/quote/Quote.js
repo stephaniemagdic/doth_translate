@@ -13,7 +13,7 @@ const Quote = ({quote, addQuote, type, disableFavoriteButton, resetDisabledButto
     if (disableFavoriteButton) {
       toggleIsDisabled(false)
     }
-    if (type==='new'){
+    if (type === 'new'){
       resetDisabledButton()
     }
   }, [disableFavoriteButton, type, resetDisabledButton])
