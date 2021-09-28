@@ -30,8 +30,7 @@
   - Allow students to review and edit eachother's interpretataion. Click the pencil to go back and edit a previously saved interpretation.
   - Save quotes you'd like to come back to.
   - Delete quotes that are clogging up your favorites.
-  Coming Soon:
-  - Go back and edit your saved quotes. (Full functionality coming soon...)
+  - Coming Soon: Go back and edit your saved quotes. 
   
   ### Bell-Ringer Ideas:
   - Give each student poster paper. Have them copy the quote from the application and define the words underlined in the sentence. Have students draw connections between the definitions and words in the sentence and use a concept web to interpret specific phrases in the sentence.
