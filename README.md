@@ -13,8 +13,8 @@
 + [Reflections & Wins](#reflections-and-wins)
 
 [Wireframes](https://miro.com/app/board/o9J_lvMEdaw=/)
-[Persona-Student]((https://docs.google.com/document/d/1UV5LH0c0km30bF26SDYU46BcUKD0wEqw1vzdnCZob7c/edit)
-[Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing))
+[Persona-Student](https://docs.google.com/document/d/1UV5LH0c0km30bF26SDYU46BcUKD0wEqw1vzdnCZob7c/edit)
+[Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing)
 
 ![MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
 
@@ -48,10 +48,7 @@
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) 
 
-- React ToolTip.
-- 
-
-- Photo Here: Shakespeare Unit.
+- Class Photo Here: Shakespeare Unit.
 
 ## Contributors
    + [Stephanie Magdic (Author)](https://github.com/stephaniemagdic) 
@@ -59,12 +56,12 @@
 
 ## Future Features
 + A user will be able to interpret a saved quote.
-+ xx
 + I plan to add PropTypes and a data cleaning function.
 
 ### Wins and Challenges
 + Wins:
   - I was able to add a lot more functionality in a week than I had originally thought possible.
-  - I was able to use react tooltip.
+  - I was able to use a new npm package, react tooltip that allowed for a user friendly way to see context clues to help with interpretations.
 + Challenges:
-  - The dictionary API I was originally using ran into an authentication error midway through the project. I had to find another API, subscribe and update my logic for the 
+  - The dictionary API I was originally using ran into an authentication error midway through the project. I had to find another API, subscribe and update my logic in my fetch requests.
+  - Github has its own 404 page which seems to be interfering with my route set up intitally, so my error page does't show up. I ended up creating a workaround file on the gh pages branch to mimic my own set up, but will be looking into this further. 
