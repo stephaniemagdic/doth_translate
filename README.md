@@ -1,5 +1,5 @@
 # Doth Translate
-#### [Link to Deployed Site]()
+#### [Link to Deployed Site](https://stephaniemagdic.github.io/doth_translate/)
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Table Of Contents
