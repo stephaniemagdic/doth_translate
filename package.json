@@ -4,9 +4,9 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stephaniemagdic/doth_translate.git",
-    "homepage": "https://github.com/stephaniemagdic/doth_translate.git"
+    "url": "git+https://github.com/stephaniemagdic/doth_translate.git"
   },
+  "homepage": "http://github.io/doth_translate",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
@@ -26,7 +26,7 @@
     "eject": "react-scripts eject",
     "cypress": "./node_modules/.bin/cypress open",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
