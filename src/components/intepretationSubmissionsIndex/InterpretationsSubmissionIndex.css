@@ -10,6 +10,8 @@
 
 .interpretations {
   margin: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .InterpretationSubmissionIndex button {

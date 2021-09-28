@@ -20,9 +20,9 @@ const Card = ({cardData, type, deleteQuote}) => {
         <button onClick={() => deleteQuote(cardData.id)}>
           <img src={bin} alt='trash bin' className="bin"></img>
         </button>
-        <button>
+        {/* <button>
           <img src={arrow} alt="right arrow" className="arrow"></img>
-        </button>
+        </button> */}
       </div>
     )
   } else if (type === 'submissions') {
