@@ -67,11 +67,12 @@
     - Favorite Shakespeare Play: 'Midsummer Night's Dream'
 
 ## Future Features
-+ A user will be able to interpret a saved quote.
-+ I plan to add PropTypes and a data cleaning function: I would like to filter thorugh my definition data and if a defintion is not found for a word, I would like to instead return null so that my component can read that prop. I would also like to provide multiple defintions per word if that word has more than one meaning.
++ A user will be able to choose their reading level and get dictionary defintions and quotes leveled to their reading level.
++ I would like to make this responsive to an ipad as well since many schools use ipads as opposed to laptops especially in grade 5.
++ With more time, I plan to add PropTypes and a data cleaning function: I would like to filter thorugh my definition data and if a defintion is not found for a word, I would like to instead return null so that my component can read that prop. I would also like to provide multiple defintions per word if that word has more than one meaning.
++ + A user will be able to interpret a saved quote.
 + I would like to further break down my components to handle a single responsibility. As functionality was added in a short amount of time, some components are larger than I would like.
 + I would like to test my non-MVP user flows. 
-+ I would like to make this responsive to an ipad as well since many schools use ipads as opposed to laptops especially in grade 5.
 
 ### Wins and Challenges
 + Wins:
