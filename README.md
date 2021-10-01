@@ -14,11 +14,11 @@
   + Type ```npm start``` into to the command line to start the React app. A browser window will appear running a local host url
 
 ## Overview
-+ Doth Translate is an application inspired by my previous middle school students and my favorite unit- Shakespeare! Elizabethan English is not easy to interpret, but it sure is fun to try! With the help of Doth Translate, a teacher can get students excited about diving into a working with Shakespearean texts by introducing them to popular Shakespearean quotes. With this simple application, students can work independently, pairs, or in groups to generate quotes by theme or by Shakespearean play and use the context clues provided on hover to work on an creating their own interpretation. Students can save their interpretations before they move to their next quote of choice, so that when teachers come around to check understanding, saved interpretations will be viewable. 
++ Doth Translate is an application inspired by my previous middle school students and my favorite unit- Shakespeare! Elizabethan English is not easy to interpret, but it sure is fun to try! With the help of Doth Translate, a teacher can get students excited about diving into a working with Shakespearean texts by introducing them to popular Shakespearean quotes. With this simple application, students can work independently, in pairs, or in groups to generate quotes by theme or by Shakespearean play and use the context clues provided on hover to work to create their own interpretations. Students can save their interpretations before they move to their next quote of choice, so that when teachers come around to check for understanding, saved interpretations will be viewable. 
 + Doth Translate allows a user to:
   - Choose a quote category.
   - Browse and choose quotes further broken down by play title or theme.
-  - Generate quotes from narrowed down selection by the click of a button. Don't like that one? Is one too difficult or just not interesting to you. Choose another.
+  - Generate quotes from narrowed down selections by the click of a button. Don't like that a quote? Is one too difficult or just not interesting to you? Choose another.
   - See context clues for words on hover: the definition will pop up in a tooltip allowing students to use those clues to help create their interpretations.
   - Type and save your interpretation of the quote for later use.
   - Allow students to review and edit eachother's interpretataion. Click the pencil to go back and edit a previously saved interpretation.
@@ -77,8 +77,8 @@
 ### Wins and Challenges
 + Wins:
   - I was able to complete a lot more functionality in a week than I had originally thought possible.
-  - I was able to conceptualize, plan, wireframe and test, and build the application in under 7 days, while building other applications requiring for the final assessment.
-  - I was able to hit two API endpoints to provide quotes and context clues to make this application more student user friendly.
+  - I was able to conceptualize, plan, wireframe, test, and build the application in under 7 days, while building other applications required for the final assessment.
+  - I was able to hit two API endpoints to provide quotes and context clues to make this application more student friendly.
   - I was able to use a new npm package, react tooltip that allowed for a user friendly way to see context clues to help with interpretations.
 + Challenges:
   - The dictionary API I was originally using ran into an authentication error midway through the project. I had to find another API, subscribe and update my logic in my fetch requests.
