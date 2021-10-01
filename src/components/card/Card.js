@@ -9,10 +9,6 @@ import {
 const Card = ({cardData, type, deleteQuote}) => {
   let componentToRender;
 
-  // const handleDeleteQuote = (id) => {
-  //   deleteQuote(id)
-  // }
-
   if (type === 'favorites') {
     componentToRender = (
       <div className="favorites-container" id={cardData.id} key={cardData.id}>

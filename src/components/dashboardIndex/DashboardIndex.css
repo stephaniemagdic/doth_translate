@@ -9,7 +9,15 @@
 h1, h2, button {
   font-family: 'Andika New Basic', sans-serif;
   font-weight: bold;
-  font: white
+  font: white;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 2.5em;
 }
 
 .button-container {
@@ -18,6 +26,10 @@ h1, h2, button {
 
 .theme-btn {
   margin-right: 4px;
+}
+
+.theme-btn, .title-btn {
+  font-size: 1.2em;
 }
 
 .margin-btn {

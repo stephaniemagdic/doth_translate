@@ -80,12 +80,13 @@ function App() {
     () => {
       checkLocalStorage()
     }, [])
+
   return (
     <div className="App">
-      <Link to="/doth_translate/"><h1 className="logo"> Doth Translate </h1></Link>
+      <Link to="/"><h1 className="logo"> Doth Translate </h1></Link>
       <Switch>
         <Route
-          exact path = "/doth_translate/"
+          exact path = "/"
           render={() => <DashboardIndex />}
         />
         <Route
@@ -108,7 +109,7 @@ function App() {
           exact path= "/edit/:id"
           render={(match) =><InterpretationIndex addInterpretation={addInterpretation} addQuote={addQuote} match={match} isEditing={true} editInterpretation={editInterpretation}/>}
         />
-        <Route render={() => <Error type='404'/>} />
+        <Route path='*' render={() => <Error type='404'/>} />
       </Switch>
       <nav className='back-to-main'> 
         <Link to="/doth_translate/">

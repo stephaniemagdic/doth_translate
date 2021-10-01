@@ -7,6 +7,7 @@
   import InterpretationInput from '../interpretationInput/InterpretationInput'
 
   const InterpretationIndex = ({addInterpretation, addQuote, isEditing, editInterpretation}) => {
+
     const [quote, setQuote] = useState('')
     const [error, setError] = useState(null)
     const [disableFavoriteButton, setDisableFavoriteButton] = useState(false)
@@ -93,7 +94,7 @@
             <button onClick={() => fetchANewQuote()}>
               GET A NEW QUOTE
             </button>
-            <Link to="/doth_translate/">
+            <Link to="/">
             <button>
               CHOOSE A NEW CATEGORY
             </button>
