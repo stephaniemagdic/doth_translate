@@ -1,5 +1,5 @@
 # [Doth Translate](https://stephaniemagdic.github.io/doth_translate/)
-## [Deployed Site](https://stephaniemagdic.github.io/doth_translate/)
+## [Deployed Site](https://stephaniemagdic.github.io/doth_translate/) <- edit interpretation page under construction.
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html) - Week long project: concept, design and architect in under 7 days.
 
 <a href="https://ibb.co/723H1sn"><img src="https://i.ibb.co/723H1sn/Shakespeare.png" alt="Shakespeare" border="0"></a>
