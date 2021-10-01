@@ -80,6 +80,7 @@ function App() {
     () => {
       checkLocalStorage()
     }, [])
+
   return (
     <div className="App">
       <Link to="/doth_translate/"><h1 className="logo"> Doth Translate </h1></Link>
