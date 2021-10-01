@@ -31,7 +31,7 @@ const CardsContainer = ({cards, type, deleteQuote}) => {
             <div className="interpretations">
                <h2 className='title'>My Interpretations</h2>
                {cardComponents}
-               {!cardComponents.length && <button><Link to="/doth_translate/">Go back to start interpreting</Link></button>}
+               {!cardComponents.length && <button><Link to="/">Go back to start interpreting</Link></button>}
             </div>
          )}   
          {type === 'favorites' && (
@@ -39,7 +39,7 @@ const CardsContainer = ({cards, type, deleteQuote}) => {
                <h2 className='title'>Saved Quotes</h2>
                {cardComponents} 
                {!cardComponents.length && (
-               <button><Link to="/doth_translate/">Find a favorite Quote</Link></button>)}
+               <button><Link to="/">Find a favorite Quote</Link></button>)}
             </div>
          )}
          {type === 'title-options' && (
