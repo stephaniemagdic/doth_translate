@@ -6,7 +6,7 @@
     "type": "git",
     "url": "git+https://github.com/stephaniemagdic/doth_translate.git"
   },
-  "homepage": "http://github.io/doth_translate",
+  "homepage": "https://stephaniemagdic.github.io/doth_translate/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
