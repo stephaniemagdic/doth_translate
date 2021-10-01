@@ -83,10 +83,10 @@ function App() {
 
   return (
     <div className="App">
-      <Link to="/doth_translate/"><h1 className="logo"> Doth Translate </h1></Link>
+      <Link to="/"><h1 className="logo"> Doth Translate </h1></Link>
       <Switch>
         <Route
-          exact path = "/doth_translate/"
+          exact path = "/"
           render={() => <DashboardIndex />}
         />
         <Route
