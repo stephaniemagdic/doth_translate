@@ -36,23 +36,23 @@ const CategoryIndex = ({category}) => {
   useEffect(() => {
     const fetchType = category.match.params.type
     if (fetchType === 'theme' ) {
-      if (localStorage.themes) {
-        const retrievedThemes = JSON.parse(localStorage.getItem('themes'))
-        setAllThemes(retrievedThemes)
-        setIsLoading(false)
-      } else {
+      // if (localStorage.themes) {
+      //   const retrievedThemes = JSON.parse(localStorage.getItem('themes'))
+      //   setAllThemes(retrievedThemes)
+      //   setIsLoading(false)
+      // } else {
         fetchThemes()
         setIsLoading(false)
-      }
+      // }
     } else if (fetchType === 'title') {
-      if (localStorage.titles) {
-        const retrievedTitles = JSON.parse(localStorage.getItem('titles'))
-        setAllTitles(retrievedTitles)
-        setIsLoading(false)
-      } else {
+      // if (localStorage.titles) {
+      //   const retrievedTitles = JSON.parse(localStorage.getItem('titles'))
+      //   setAllTitles(retrievedTitles)
+      //   setIsLoading(false)
+      // } else {
         fetchTitles()
         setIsLoading(false)
-      }
+      // }
     }
   }, [category.match.params.type])
 
