@@ -1,0 +1,3 @@
+export const themes = ['desire', 'love', 'strength', 'rich', 'ambition', 'evil', 'violence', 'tyranny', 'guilt', 'conscience', 'witchcraft', 'courage', 'pain', 'friendship', 'fate', 'faith', 'vengeance' ]
+
+export const titles = ['henry-vi', 'henry-iv', 'much-ado-about-nothing', 'alls- well-that-ends-well', 'as-you-like-it', 'the-comedy-of-errors', 'henry-v', 'hamlet', 'julius-cesar', 'love-labors-lost', 'macbeth', 'measure-for-measure', 'a-midsummer-night\'s-dream', 'the-merchant-of-venice', 'othello', 'romeo-and juliet', 'the-temptest', 'twelfth-night', 'the-two-noble-kinsmen', 'the-merry-wives-of-windsor', 'antony-and-cleopatra', 'king-lear', 'the-taming-of-the-shrew', 'the-winter\'s-tale' ]
