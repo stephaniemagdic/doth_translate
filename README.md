@@ -8,6 +8,7 @@
 ---
 ## Table Of Contents
 [Setup instructions](#setup-instructions) | [Overview](#overview) | [Planning Docs](#Planning-Docs) | [Examples](#examples) | [Learning Goals](#learning-goals)| [Technologies used](#technologies-used) | [Contributors](#contributors) | [Future features](#future-features) | [Reflections & Wins](#reflections-and-wins)
+
 ---
 
 ## Set-up Instructions
