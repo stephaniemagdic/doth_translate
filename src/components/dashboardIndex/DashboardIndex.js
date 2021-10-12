@@ -1,22 +1,23 @@
 import { Link } from 'react-router-dom';
 import {useEffect} from 'react';
-import {fetchAllTitles, fetchAllThemes} from '../../util.js';
-import './DashboardIndex.css';
+// import {fetchAllTitles, fetchAllThemes} from '../../util.js';
+
+
 
 const DashboardIndex = () => {
   const setCategoriesInLocalStorage = () => {
-    fetchAllTitles().then((data) => {
-      const titleOptions = JSON.stringify(data.quote);
-      localStorage.setItem('titles', titleOptions)
-      })
-    fetchAllThemes().then((data) => {
-      const themeOptions = JSON.stringify(data.quote);
-      localStorage.setItem('themes', themeOptions)
-      })
+    // fetchAllTitles().then((data) => {
+    //   const titleOptions = JSON.stringify(data.quote);
+    //   localStorage.setItem('titles', titleOptions)
+    //   })
+    // fetchAllThemes().then((data) => {
+    //   const themeOptions = JSON.stringify(data.quote);
+    //   localStorage.setItem('themes', themeOptions)
+    //   })
   }
 
   useEffect(() => {
-    setCategoriesInLocalStorage()
+    // setCategoriesInLocalStorage()
   }, [])
 
   return (
