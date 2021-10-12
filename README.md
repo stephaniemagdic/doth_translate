@@ -1,3 +1,6 @@
+#### Attention: Unfortunately the API that supported this application was recently made unaccessible. This project is being reconceptualized and rebuilt.
+
+
 <!-- <div align='center'>
   <a href="https://ibb.co/723H1sn"><img src="https://i.ibb.co/723H1sn/Shakespeare.png" alt="Shakespeare" border="0"></a>
 </div> -->
@@ -5,7 +8,6 @@
 ## <p align='center'>[View Deployed Site Here](https://stephaniemagdic.github.io/doth_translate/)</p>
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html) - Week long project: concept, design and architect in under 7 days.
 
-#### Attention: Unfortunately the API that supported this application was recently made unaccessible. This project is being reconceptualized and rebuilt.
 
 
 ---
