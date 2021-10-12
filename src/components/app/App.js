@@ -112,7 +112,7 @@ function App() {
         <Route path='*' render={() => <Error type='404'/>} />
       </Switch>
       <nav className='back-to-main'> 
-        <Link to="/doth_translate/">
+        <Link to="/">
           <img src={shakespeareIcon} alt="Shakespeare icon" className="shakespeare"></img>
         </Link>
         <div className='more-info'>
