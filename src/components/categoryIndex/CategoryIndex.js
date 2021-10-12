@@ -10,7 +10,7 @@ const CategoryIndex = ({category}) => {
   const [allTitles, setAllTitles] = useState([])
   const [allThemes, setAllThemes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
+  // const [error, setError] = useState(null)
   
 
   const fetchTitles = async () => {
@@ -39,26 +39,26 @@ const CategoryIndex = ({category}) => {
       if (localStorage.themes) {
         const retrievedThemes = JSON.parse(localStorage.getItem('themes'))
         setAllThemes(retrievedThemes)
-        setIsLoading(false)
+        // setIsLoading(false)
       } else {
         fetchThemes()
-        setIsLoading(false)
-      }
+      //   setIsLoading(false)
+      // }
     } else if (fetchType === 'title') {
       if (localStorage.titles) {
         const retrievedTitles = JSON.parse(localStorage.getItem('titles'))
         setAllTitles(retrievedTitles)
-        setIsLoading(false)
+        // setIsLoading(false)
       } else {
         fetchTitles()
-        setIsLoading(false)
+        // setIsLoading(false)
       }
     }
   }, [category.match.params.type])
 
   return (
     <div className="CategoryIndex">
-      {error && <Error type={error}/>}
+      {/* {error && <Error type={error}/>} */}
       {isLoading && <> <p>Loading...</p><img src={loadingClock} alt="old clock "></img></>}
       {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
       {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }
