@@ -5,7 +5,7 @@
 ## <p align='center'>[View Deployed Site Here](https://stephaniemagdic.github.io/doth_translate/)</p>
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html) - Week long project: concept, design and architect in under 7 days.
 
-#### Attention: Unfortunately the API that supported this application was recently made unaccessible. This project is being reconceptualized and built.
+#### Attention: Unfortunately the API that supported this application was recently made unaccessible. This project is being reconceptualized and rebuilt.
 
 ---
 ## Table Of Contents
