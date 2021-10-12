@@ -1,8 +1,7 @@
+<a href="https://ibb.co/723H1sn" align='center'><img src="https://i.ibb.co/723H1sn/Shakespeare.png" alt="Shakespeare" border="0"></a>
 # <p align='center'>[Doth Translate](https://stephaniemagdic.github.io/doth_translate/)</p>
 ## <p align='center'>[View Deployed Site Here](https://stephaniemagdic.github.io/doth_translate/)</p>
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html) - Week long project: concept, design and architect in under 7 days.
-
-<a href="https://ibb.co/723H1sn"><img src="https://i.ibb.co/723H1sn/Shakespeare.png" alt="Shakespeare" border="0"></a>
 
 ## Table Of Contents
 [Setup instructions](#setup-instructions) | [Overview](#overview) | [Planning Docs](#Planning-Docs) | [Examples](#examples) | [Learning Goals](#learning-goals)| [Technologies used](#technologies-used) | [Contributors](#contributors) | [Future features](#future-features) | [Reflections & Wins](#reflections-and-wins)
