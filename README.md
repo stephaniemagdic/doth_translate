@@ -50,16 +50,16 @@
 <a href="https://ibb.co/ZzfDVz8"><img src="https://i.ibb.co/PGrHNGh/Screen-Shot-2021-09-28-at-6-32-09-AM.png" alt="Screen-Shot-2021-09-28-at-6-32-09-AM" border="0"></a>
 
 ## Learning Goals
-+ This application is built using functional react. The UseEffect hook is used for asynchronous javascript, fetching from our quote and dictionary API on rendering of applicable components.
-+ Router is utilzed to allow a user to navigate back and forth between paths, and local storage is utilized to persist data, grabbing by query param of id on page load to match id in local storage, which allowsa user access to those saved interpretations. 
-+ Cypress end to to end tests are utilized for both happy and sad paths for the MVP's user flows.
++ This application is built using functional components in React.
++ Router is utilzed to allow a user to navigate back and forth between paths, along with local storage to persist data, grabbing by query param of id on page load to match id in local storage, which allowsa user access to those saved interpretations. 
++ MVP's user flows for both happy and sad paths are thoroughly tested using Cypress.
 
 
 ## Technologies Used
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) ![cypress](https://img.shields.io/badge/-cypress-%23E5E5E5?style=for-the-badge&logo=cypress&logoColor=058a5e) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white) 
 
-- Class Photo Here: Shakespeare Unit.
+- Insert Class Photo Here.
 
 ## Contributors
    + [Stephanie Magdic (Author)](https://github.com/stephaniemagdic) 
@@ -72,6 +72,7 @@
 + + A user will be able to interpret a saved quote.
 + I would like to further break down my components to handle a single responsibility. As functionality was added in a short amount of time, some components are larger than I would like.
 + I would like to test my non-MVP user flows. 
++ Code Architecture: I would like to refactor the applications code so if follows purely functional programming principles.
 
 ### Wins and Challenges
 + Wins:
