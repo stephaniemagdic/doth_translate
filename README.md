@@ -69,7 +69,7 @@
 
 ## Learning Goals
 + This application is built using functional components in React.
-+ Router is utilzed to allow a user to navigate back and forth between paths, along with local storage to persist data, grabbing by query param of id on page load to match id in local storage, which allowsa user access to those saved interpretations. 
++ Router is utilzed to allow a user to navigate back and forth between paths, and local storage is used to persist data, where applicable components use url query parameters on page load to match id in local storage to retrieve saved interpretations. 
 + MVP's user flows for both happy and sad paths are thoroughly tested using Cypress.
 
 ---
@@ -83,7 +83,7 @@
 + A user will be able to choose their reading level and get dictionary defintions and quotes leveled to their reading level.
 + I would like to make this responsive to an ipad as well since many schools use ipads as opposed to laptops especially in grade 5.
 + With more time, I plan to add PropTypes and a data cleaning function: I would like to filter thorugh my definition data and if a defintion is not found for a word, I would like to instead return null so that my component can read that prop. I would also like to provide multiple defintions per word if that word has more than one meaning.
-+ + A user will be able to interpret a saved quote.
++ A user will be able to interpret a saved quote.
 + I would like to further break down my components to handle a single responsibility. As functionality was added in a short amount of time, some components are larger than I would like.
 + I would like to test my non-MVP user flows. 
 + Code Architecture: I would like to refactor the applications code so if follows purely functional programming principles.
