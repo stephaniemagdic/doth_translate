@@ -74,7 +74,7 @@
 
 ## Learning Goals
 + This application is built using functional components in React.
-+ Router is utilzed to allow a user to navigate back and forth between paths, and local storage is used to persist data, where applicable components use url query parameters on page load to match id in local storage to retrieve saved interpretations. 
++ Router is utilzed to allow a user to navigate back and forth between paths, and local storage is used to persist data, where applicable components use url query parameters on page load to match id in local storage to retrieve saved interpretations. The routing makes the application very dynamic. The route is created based first on either the theme or title category and then by the topic chosen. Then a random quote based on those two queries to fetch very specifcially by theme topic or play topic.
 + MVP's user flows for both happy and sad paths are thoroughly tested using Cypress.
 
 ---
