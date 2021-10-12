@@ -1,6 +1,3 @@
-#### Attention: Unfortunately the API that supported this application was recently made unaccessible. This project is being reconceptualized and rebuilt.
-
-
 <!-- <div align='center'>
   <a href="https://ibb.co/723H1sn"><img src="https://i.ibb.co/723H1sn/Shakespeare.png" alt="Shakespeare" border="0"></a>
 </div> -->
@@ -21,6 +18,8 @@
   + Clone your new repo down to your local machine in your chosen directory
   + Type ```npm install``` into the command line to install all dependencies
   + Type ```npm start``` into to the command line to start the React app. A browser window will appear running a local host url
+
+#### Attention: The API that supported this application was recently made unaccessible. The new data being used for Shakesperean quotes is hardcoded data. Therefore the code you see in the src folder might not accurately reflect the code you see in the browser. This quick deployment is a short term fix.
 
 ---
 
