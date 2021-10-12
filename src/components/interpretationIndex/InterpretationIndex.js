@@ -1,10 +1,13 @@
   import React, {useEffect, useState} from 'react';
-  import {fetchQuoteByTheme, fetchQuoteByTitle} from '../../util.js'
+  // import {fetchQuoteByTheme, fetchQuoteByTitle} from '../../util.js'
+  import {playQuotes} from '../../data/playQuotes';
+  import {themeQuotes} from '../../data/themeQuotes';
   import Quote from '../quote/Quote.js'
   import './InterpretationIndex.css'
   import {Link} from 'react-router-dom';
   import Error from '../error/Error'
   import InterpretationInput from '../interpretationInput/InterpretationInput'
+  import uuid from 'react-uuid';
 
   const InterpretationIndex = ({addInterpretation, addQuote, isEditing, editInterpretation}) => {
 
@@ -14,21 +17,25 @@
     const [interpretationId, setInterpretationId] = useState(null)
 
     const fetchThemeQuote = async (theme) => {
-      try {
-        const data = await fetchQuoteByTheme(theme)
-        setQuote({quote: data.quote.quote, id: data.quote.id})    
-      } catch (err) {
-        setError("no quote found")
-      }
+      // try {
+      //   const data = await fetchQuoteByTheme(theme)
+      //   setQuote({quote: data.quote.quote, id: data.quote.id})    
+      // } catch (err) {
+      //   setError("no quote found")
+      // }
+      setQuote({quote: themeQuotes[theme][Math.floor(Math.random()*themeQuotes[theme].length)], id: uuid()})
     }
 
+
     const fetchTitleQuote = async (title) => {
-      try {
-        const data = await fetchQuoteByTitle(title)
-        setQuote({quote: data.quote.quote, id: data.quote.id})
-      } catch (err) {
-        setError("no quote found")
-      }
+      // try {
+      //   const data = await fetchQuoteByTitle(title)
+      //   setQuote({quote: data.quote.quote, id: data.quote.id})
+      // } catch (err) {
+      //   setError("no quote found")
+      // }
+      console.log("title from url", title)
+      setQuote({quote: playQuotes[title][[Math.floor(Math.random()*playQuotes[title].length)]], id: uuid()})
     }
 
     const findQuoteFromStorageById = () => {
