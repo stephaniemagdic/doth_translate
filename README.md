@@ -5,6 +5,8 @@
 ## <p align='center'>[View Deployed Site Here](https://stephaniemagdic.github.io/doth_translate/)</p>
 #### [Link to Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html) - Week long project: concept, design and architect in under 7 days.
 
+#### Attention: Unfortunately the API that supported this application was recently made unaccessible. This project is being reconceptualized and built.
+
 ---
 ## Table Of Contents
 [Setup instructions](#setup-instructions) | [Technologies used](#technologies-used) | [Overview](#overview) | [Organizational Tools](#Organizational-Tools) | [Examples](#examples) | [Learning Goals](#learning-goals) | [Contributors](#contributors) | [Future features](#future-features) | [Reflections & Wins](#reflections-and-wins)
