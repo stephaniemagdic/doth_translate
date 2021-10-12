@@ -82,5 +82,4 @@
   - I was able to use a new npm package, react tooltip that allowed for a user friendly way to see context clues to help with interpretations.
 + Challenges:
   - The dictionary API I was originally using ran into an authentication error midway through the project. I had to find another API, subscribe and update my logic in my fetch requests.
-  - Github has its own 404 page which seems to be interfering with my route set up intitally, so the error page I created does't show up on Github Pages. I ended up creating a workaround file on the gh pages branch to mimic my own set up, but will be looking into this further. I would like to deploy this application with another deployment tool.
 
