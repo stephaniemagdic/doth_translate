@@ -49,13 +49,13 @@
 
 ## Organizational Tools
 
-[Wireframes](https://miro.com/app/board/o9J_lvMEdaw=/)
++ [Wireframes](https://miro.com/app/board/o9J_lvMEdaw=/)
 
-[Persona-Student](https://docs.google.com/document/d/1UV5LH0c0km30bF26SDYU46BcUKD0wEqw1vzdnCZob7c/edit)
++ [Persona-Student](https://docs.google.com/document/d/1UV5LH0c0km30bF26SDYU46BcUKD0wEqw1vzdnCZob7c/edit)
 
-[Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing)
++ [Persona- Teacher](https://docs.google.com/document/d/1Wmgy0umEFigBY2lBsGkEFh_BD__9ly538DfWEYXg780/edit?usp=sharing)
 
-[MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
++ [MVP](https://i.ibb.co/CM70fSn/shakespeare-gif-1.gif)
 
 ---
 
