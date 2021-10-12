@@ -7,7 +7,7 @@
 
 ---
 ## Table Of Contents
-[Setup instructions](#setup-instructions) | [Overview](#overview) | [Planning Docs](#Planning-Docs) | [Examples](#examples) | [Learning Goals](#learning-goals) | [Technologies used](#technologies-used) | [Contributors](#contributors) | [Future features](#future-features) | [Reflections & Wins](#reflections-and-wins)
+[Setup instructions](#setup-instructions) | [Technologies used](#technologies-used) | [Overview](#overview) | [Organizational Tools](#Organizational-Tools) | [Examples](#examples) | [Learning Goals](#learning-goals) | [Contributors](#contributors) | [Future features](#future-features) | [Reflections & Wins](#reflections-and-wins)
 
 ---
 
@@ -90,12 +90,12 @@
 
 ---
 
-### Wins and Challenges Over the 7 Day Challenge
+### Reflections and Wins Over the 7 Day Challenge
 + Wins:
   - I was able to complete much more functionalty and build out far beyond my MVP than I had originally thought possible in just a week.
   - I was able to conceptualize, plan, wireframe, test, and build the application in under 7 days, while building other applications required for the final assessment.
   - I was able to consume two API endpoints to provide quotes and context clues to make this application more student friendly.
   - I was able to learn and use a new npm package, react tooltip that allowed for a user friendly way to see context clues to help with interpretations.
-+ Challenges:
++ Reflections:
   - The dictionary API I was originally using ran into an authentication error midway through the project. I had to find another API, subscribe and update my logic in my fetch requests.
 
