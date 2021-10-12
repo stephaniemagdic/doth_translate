@@ -4,29 +4,33 @@ import CardsContainer from '../cardsContainer/CardsContainer';
 import loadingClock from '../../assets/Loading.png';
 import Error from '../error/Error';
 import './CategoryIndex.css';
+import {themes, titles} from '../../data/categoryOptions';
 
 const CategoryIndex = ({category}) => {
   const [allTitles, setAllTitles] = useState([])
   const [allThemes, setAllThemes] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(null)
+  
 
   const fetchTitles = async () => {
-    try {
-      const data = await fetchAllTitles()
-      setAllTitles(data.quote)
-    } catch (err) {
-      setError("no options found")
-    }
+    // try {
+    //   const data = await fetchAllTitles()
+    //   setAllTitles(data.quote)
+    // } catch (err) {
+    //   setError("no options found")
+    // }
+    setAllTitles(titles)
   }
 
   const fetchThemes = async () => {
-    try {
-      const data = await fetchAllThemes()
-      setAllThemes(data.quote)
-    } catch (err) {
-      setError("no options found")
-    }
+    // try {
+    //   const data = await fetchAllThemes()
+    //   setAllThemes(data.quote)
+    // } catch (err) {
+    //   setError("no options found")
+    // }
+    setAllThemes(themes)
   }
 
   useEffect(() => {
