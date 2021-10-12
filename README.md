@@ -7,7 +7,6 @@
 
 #### Attention: Unfortunately the API that supported this application was recently made unaccessible. This project is being reconceptualized and rebuilt.
 
-<div><a href="https://ibb.co/LYN7mbj"><img src="https://i.ibb.co/LYN7mbj/Under-construction.png" alt="Under-construction" border="0"></a></div>
 
 ---
 ## Table Of Contents
