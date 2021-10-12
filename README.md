@@ -51,8 +51,8 @@
 
 ## Learning Goals
 + This application is built using functional react. The UseEffect hook is used for asynchronous javascript, fetching from our quote and dictionary API on rendering of applicable components.
-+ Router is utilzed to allow a user to navigate back and forth to between paths, and uses id's for stored interpretations, which are grabbed at the route on page load from local storage to allow access to that interpretation when rendering a new component. 
-+ Cypress end to to end tests are utilized for happy and sad paths for the MVP's user flow.
++ Router is utilzed to allow a user to navigate back and forth between paths, and local storage is utilized to persist data, grabbing by query param of id on page load to match id in local storage, which allowsa user access to those saved interpretations. 
++ Cypress end to to end tests are utilized for both happy and sad paths for the MVP's user flows.
 
 
 ## Technologies Used
