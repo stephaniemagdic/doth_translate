@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import {useEffect} from 'react';
+import './DashboardIndex.css'
 // import {fetchAllTitles, fetchAllThemes} from '../../util.js';
 
 
