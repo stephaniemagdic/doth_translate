@@ -43,7 +43,7 @@ const CategoryIndex = ({category}) => {
       } else {
         fetchThemes()
       //   setIsLoading(false)
-      // }
+      }
     } else if (fetchType === 'title') {
       if (localStorage.titles) {
         const retrievedTitles = JSON.parse(localStorage.getItem('titles'))
