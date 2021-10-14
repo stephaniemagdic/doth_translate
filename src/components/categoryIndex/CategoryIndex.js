@@ -1,17 +1,16 @@
-import {useEffect, useState} from 'react';
-import {fetchAllTitles, fetchAllThemes} from '../../util.js';
-import CardsContainer from '../cardsContainer/CardsContainer';
-import loadingClock from '../../assets/Loading.png';
-import Error from '../error/Error';
-import './CategoryIndex.css';
-import {themes, titles} from '../../data/categoryOptions';
+import { useEffect, useState } from "react";
+import { fetchAllTitles, fetchAllThemes } from "../../util.js";
+import CardsContainer from "../cardsContainer/CardsContainer";
+import loadingClock from "../../assets/Loading.png";
+import Error from "../error/Error";
+import "./CategoryIndex.css";
+import { themes, titles } from "../../data/categoryOptions";
 
-const CategoryIndex = ({category}) => {
-  const [allTitles, setAllTitles] = useState([])
-  const [allThemes, setAllThemes] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState(null)
-  
+const CategoryIndex = ({ category }) => {
+  const [allTitles, setAllTitles] = useState([]);
+  const [allThemes, setAllThemes] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const fetchTitles = async () => {
     // try {
@@ -20,8 +19,8 @@ const CategoryIndex = ({category}) => {
     // } catch (err) {
     //   setError("no options found")
     // }
-    setAllTitles(titles)
-  }
+    setAllTitles(titles);
+  };
 
   const fetchThemes = async () => {
     // try {
@@ -30,40 +29,50 @@ const CategoryIndex = ({category}) => {
     // } catch (err) {
     //   setError("no options found")
     // }
-    setAllThemes(themes)
-  }
+    setAllThemes(themes);
+  };
 
   useEffect(() => {
-    const fetchType = category.match.params.type
-    if (fetchType === 'theme' ) {
+    const fetchType = category.match.params.type;
+    if (fetchType === "theme") {
       // if (localStorage.themes) {
       //   const retrievedThemes = JSON.parse(localStorage.getItem('themes'))
       //   setAllThemes(retrievedThemes)
       //   setIsLoading(false)
       // } else {
-        fetchThemes()
-        setIsLoading(false)
+      fetchThemes();
+      setIsLoading(false);
       // }
-    } else if (fetchType === 'title') {
+    } else if (fetchType === "title") {
       // if (localStorage.titles) {
       //   const retrievedTitles = JSON.parse(localStorage.getItem('titles'))
       //   setAllTitles(retrievedTitles)
       //   setIsLoading(false)
       // } else {
-        fetchTitles()
-        setIsLoading(false)
+      fetchTitles();
+      setIsLoading(false);
       // }
     }
-  }, [category.match.params.type])
+  }, [category.match.params.type]);
 
   return (
     <div className="CategoryIndex">
-      {error && <Error type={error}/>}
-      {isLoading && <> <p>Loading...</p><img src={loadingClock} alt="old clock "></img></>}
-      {category.match.params.type === 'theme'  && <CardsContainer cards={allThemes} type="theme-options"/> }
-      {category.match.params.type === 'title' && <CardsContainer cards={allTitles} type="title-options"/> }
+      {error && <Error type={error} />}
+      {isLoading && (
+        <>
+          {" "}
+          <p>Loading...</p>
+          <img src={loadingClock} alt="old clock "></img>
+        </>
+      )}
+      {category.match.params.type === "theme" && (
+        <CardsContainer cards={allThemes} type="theme-options" />
+      )}
+      {category.match.params.type === "title" && (
+        <CardsContainer cards={allTitles} type="title-options" />
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default CategoryIndex;
