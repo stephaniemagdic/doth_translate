@@ -19,7 +19,7 @@
   + Type ```npm install``` into the command line to install all dependencies
   + Type ```npm start``` into to the command line to start the React app. A browser window will appear running a local host url
 
-#### Attention: The API that supported this application was recently made unaccessible. The new data being used for Shakesperean quotes is hardcoded data. Therefore the code you see in the src folder might not accurately reflect the code you see in the browser. This quick deployment is a short term fix.
+#### Attention: The API that supported this application was recently made inaccessible. The new data being used for Shakesperean quotes is hardcoded data. Therefore the code you see in the src folder might not accurately reflect the code you see in the browser. This quick deployment is a short term fix.
 
 ---
 
